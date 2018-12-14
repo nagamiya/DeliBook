@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(version: 20181213071429) do
   end
 
   create_table "book_authors", force: :cascade do |t|
-    t.integer  "book_id_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "book_id_id",   null: false
+    t.integer  "author_id_id", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "books", force: :cascade do |t|

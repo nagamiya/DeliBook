@@ -20,21 +20,21 @@ ActiveRecord::Schema.define(version: 20181213071429) do
   end
 
   create_table "book_authors", force: :cascade do |t|
-    t.integer  "book_id_id",   null: false
-    t.integer  "author_id_id", null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "book_id",    null: false
+    t.integer  "author_id",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "books", force: :cascade do |t|
-    t.string   "name",            null: false
-    t.string   "isbn",            null: false
-    t.integer  "genre_id_id",     null: false
-    t.integer  "publisher_id_id", null: false
-    t.integer  "stock_num",       null: false
-    t.string   "summary",         null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "name",         null: false
+    t.string   "isbn",         null: false
+    t.integer  "genre_id",     null: false
+    t.integer  "publisher_id", null: false
+    t.integer  "stock_num",    null: false
+    t.string   "summary",      null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "genres", force: :cascade do |t|
@@ -62,8 +62,8 @@ ActiveRecord::Schema.define(version: 20181213071429) do
   end
 
   create_table "rentals", force: :cascade do |t|
-    t.integer  "book_id_id",                   null: false
-    t.integer  "member_id_id",                 null: false
+    t.integer  "book_id",                      null: false
+    t.integer  "member_id",                    null: false
     t.date     "rent_date",                    null: false
     t.date     "return_date",                  null: false
     t.boolean  "is_delivered", default: false, null: false
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 20181213071429) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.integer  "book_id_id",                   null: false
-    t.integer  "member_id_id",                 null: false
+    t.integer  "book_id",                      null: false
+    t.integer  "member_id",                    null: false
     t.date     "app_date",                     null: false
     t.boolean  "is_processed", default: false, null: false
     t.datetime "created_at",                   null: false

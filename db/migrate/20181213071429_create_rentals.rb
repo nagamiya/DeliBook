@@ -4,7 +4,7 @@ class CreateRentals < ActiveRecord::Migration
       t.references :book, null: false
       t.references :member, null: false
       t.date :rent_date, null: false
-      t.date :return_date, null: false
+      t.date :return_date
       t.boolean :is_delivered, null: false, default: false
 
       t.timestamps null: false

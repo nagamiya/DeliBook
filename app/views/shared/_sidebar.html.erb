@@ -1,0 +1,11 @@
+<h2>サイドバー</h2>
+!!CSSつくらないとね、sidebarがsideじゃないね!!
+</br>
+if ログイン</br>
+	render "shared/afterlogin.html.erb"</br>
+	render "shared/afterlogin.html.erb" unless current_memberとか使えそう</br>
+else</br>
+	render "shared/beforelogin.html.erb"</br>
+
+とりあえずのログインフォームよびだし
+<%= render "shared/login_form"%>

@@ -23,7 +23,7 @@ class BooksController < ApplicationController
 	end
 
 	def search 
-	  @books = Book.search(params[:q])
+	  @books = Book.search(params[:book_title])
 	  render "index"
 	end
 end

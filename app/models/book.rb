@@ -10,7 +10,8 @@ class Book < ActiveRecord::Base
 	  def search(query)
 	    rel = order("id");
 	    if query.present?
-	      rel = rel.where("name LIKE ?", "%#{query}%")
+	   #   rel = rel.where("name LIKE ?", "%#{query[0]}% ")
+	   #   rel = rel.where("publisher LIKE ?", "%#{query[1]}% ")
 	    end
 	    rel 
 	  end

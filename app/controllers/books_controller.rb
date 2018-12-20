@@ -1,5 +1,10 @@
 class BooksController < ApplicationController
+	def index
+	  @books = Book.order("id")
+	end
+
 	def show
+	  @book = Book.find(params[:id])
 	end
 
 	def new
@@ -17,6 +22,8 @@ class BooksController < ApplicationController
 	def destroy
 	end
 
-	def search
+	def search 
+	  @books = Book.search(params[:q])
+	  render "index"
 	end
 end

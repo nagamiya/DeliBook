@@ -1,4 +1,6 @@
 <h2>検索部分だね</h2>
+
+<%= form_tag :search_books, method: :get do %>
 <table id="search_form">
 <tr>
   <td style="text-align: right">タイトル</td>
@@ -21,4 +23,5 @@
   <%= submit_tag "検索" %></td>
 </tr>
 </table>
+<% end %>
 

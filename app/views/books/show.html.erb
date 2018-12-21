@@ -1,0 +1,31 @@
+<h2>本の詳細画面--booksControllerのshow</h2>
+
+<h3><%= @book.name %></h3>
+<table class="book_show">
+  <tr>
+    <th width="150">ISBN</th>
+    <td><%= @book.isbn %></td>
+  </tr>
+  <tr>
+    <th>著者</th>
+    <td>
+	<% @book.authors.each do |author| %> 
+	  <%= author.name %></br>
+	<% end %>
+    </td>
+  </tr>
+  <tr>
+    <th>出版社</th>
+    <td><%= @book.publisher.name %></td>
+  </tr>
+  <tr>
+    <th>ジャンル</th>
+    <td><%= @book.genre.name %></td>
+  </tr>
+  <tr>
+    <th>あらすじ</th>
+    <td><%= @book.summary %></td>
+  </tr>
+
+</table>
+

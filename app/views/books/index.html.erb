@@ -16,7 +16,11 @@
     <td style="text-align: right"><%= book.id %></td>
     <td><%= link_to book.name, book %></td>
     <td><%= book.isbn %></td>
-    <td> book.author </td>
+    <td>
+	<% book.authors.each do |author| %> 
+	  <%= author.name %></br>
+	<% end %>
+    </td>
     <td><%= book.publisher_id %></td>
     <td><%= book.genre_id %></td>
     <td><%= book.stock_num %></td>

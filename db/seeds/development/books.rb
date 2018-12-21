@@ -18,7 +18,8 @@ summarys = %w(aaaaaaaaa bbbbbbbbb cccccccc dddddddddd eeeeeeee)
 	if idx % 2 != 0 then	a = 2	end
 	if idx % 2 == 0 then	a = 3	end
 	1.upto(a) do |idx2|
-	    @author = Author.find( (idx * idx2) % 5 + 1 )
+	    @author = Author.find( (( idx + 1) + idx2) % 5 + 1 )
 	    @book.authors << @author
+	    puts "idx:" + idx.to_s + ", idx2:" + idx2.to_s + ", name:" + @author.name
 	end
 end

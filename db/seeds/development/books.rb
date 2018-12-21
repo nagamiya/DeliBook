@@ -1,7 +1,7 @@
 names = %w(本 本本 本本本 本本本本 本本本本本)
 isbns = %w(000-0000 111-1111 222-2222 333-3333 444-4444)
-genre_ids = %w(0 1 2 3 4)
-publisher_ids = %w(0 1 2 3 4)
+genre_ids = %w(1 2 3 4 5)
+publisher_ids = %w(1 2 3 4 5)
 stock_nums = %w(5 10 15 20 25)
 summarys = %w(aaaaaaaaa bbbbbbbbb cccccccc dddddddddd eeeeeeee)
 

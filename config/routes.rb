@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 	resources :books do
 	  collection { get "search" }
 	end
+	resource :session, only: [:create, :destroy]
 end

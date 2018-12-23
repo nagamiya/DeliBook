@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181221101750) do
+ActiveRecord::Schema.define(version: 20181221102847) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "name",       null: false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20181221101750) do
     t.boolean  "is_admin",     default: false, null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.string   "password"
   end
 
   create_table "publishers", force: :cascade do |t|
@@ -64,7 +65,7 @@ ActiveRecord::Schema.define(version: 20181221101750) do
     t.integer  "book_id",                      null: false
     t.integer  "member_id",                    null: false
     t.date     "rent_date",                    null: false
-    t.date     "return_date",                  null: false
+    t.date     "return_date"
     t.boolean  "is_delivered", default: false, null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false

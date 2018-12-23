@@ -13,4 +13,16 @@ class Member < ActiveRecord::Base
 	@defpassword = val
   end
 
+  class << self
+    def authenticate(user_id, pswd)
+      member = find_by(user_id: user_id)
+      if member && member.password.present? &&
+        BCrypt::Password.new(member.password) == pswd
+        member
+      else
+        nil
+      end
+    end
+  end
+
 end

@@ -7,6 +7,6 @@ else</br>
 	render "shared/beforelogin.html.erb"</br>
 
 とりあえずのログインフォームよびだし
-<%= render "shared/login_form"%>
+<%= render "shared/login_form" unless current_member %>
 
 <%= link_to "新規登録", [:new, :member] %>

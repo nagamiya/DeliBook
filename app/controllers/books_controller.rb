@@ -5,7 +5,7 @@ class BooksController < ApplicationController
 
 	def show
 	  @book = Book.find(params[:id])
-	  @rental_num = find_by_sql(['select count(*) from rental where '])
+	  #@rental_num = find_by_sql(['select count(*) from rental where '])
 	end
 
 	def new

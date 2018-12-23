@@ -1,12 +1,13 @@
 <h2>サイドバー</h2>
-</br>
-if ログイン</br>
-	render "shared/afterlogin.html.erb"</br>
-	render "shared/afterlogin.html.erb" unless current_memberとか使えそう</br>
-else</br>
-	render "shared/beforelogin.html.erb"</br>
 
-とりあえずのログインフォームよびだし
 <%= render "shared/login_form" unless current_member %>
 
-<%= link_to "新規登録", [:new, :member] %>
+<% if current_member %>
+  <p class="member">
+	<%= link_to current_member.name %> さん </br>
+	<%= link_to "ログアウト", :session,
+      method: :delete, data: { confirm: "ログアウトしますか？" } %>
+  </p>
+<% else %>
+	<%= link_to "新規登録", [:new, :member] %>	
+<% end %>

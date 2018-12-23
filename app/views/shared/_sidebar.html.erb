@@ -4,7 +4,8 @@
 
 <% if current_member %>
   <p class="member">
-	<%= link_to current_member.name %> さん </br>
+	%= link_to current_member.name , member_path(id: current_member.id) %> さん </br>
+	<%= link_to current_member.name + "さん", account_path(id: current_member.id) %>
 	<%= link_to "ログアウト", :session,
       method: :delete, data: { confirm: "ログアウトしますか？" } %>
   </p>

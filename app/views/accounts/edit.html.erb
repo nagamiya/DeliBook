@@ -1,0 +1,6 @@
+<h2>プロフィール編集画面--AccountsControllerのedit</h2>
+
+<%= form_for @member , as: "account", url: :account do |form| %>
+<%= render "members/form", form: form %>
+<p><%= form.submit %></p>
+<% end %>

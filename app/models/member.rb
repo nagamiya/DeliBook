@@ -2,6 +2,8 @@ class Member < ActiveRecord::Base
   has_many :reservations, dependent: :destroy
   has_many :rentals, dependent: :destroy
 
+  #validates :password, confirmation: { allow_blank: true }
+
   attr_accessor :hashed_password, :password_confirmation
 
   def defpassword=(val)

@@ -1,1 +1,6 @@
 <h2>会員の新規登録画面--membersControllerのnew</h2>
+
+<%= form_for @member do |form| %>
+<%= render "form", form: form %>
+<p><%= form.submit %></p>
+<% end %>

@@ -1,5 +1,5 @@
-book_ids = %w(0 1 2)
-member_ids = %w(0 1 2)
+book_ids = %w(1 2 3)
+member_ids = %w(1 2 3)
 rent_dates = ["2018-12-01", "2018-12-10", "2018-12-20"]
 return_dates = ["2018-12-08", "2018-12-17", "2018-12-27"]
 0.upto(2) do |idx|

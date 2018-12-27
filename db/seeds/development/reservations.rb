@@ -1,5 +1,5 @@
-book_ids = %w(0 1 2)
-member_ids = %w(0 1 2)
+book_ids = %w(1 2 3)
+member_ids = %w(1 2 4)
 app_dates = ["2018-11-29", "2018-12-7", "2018-12-18"]
 0.upto(2) do |idx|
 	Reservation.create(

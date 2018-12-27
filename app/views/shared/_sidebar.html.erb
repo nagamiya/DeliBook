@@ -4,8 +4,11 @@
 
 <% if current_member %>
   <p class="member">
-	%= link_to current_member.name , member_path(id: current_member.id) %> さん </br>
-	<%= link_to current_member.name + "さん", account_path(id: current_member.id) %>
+　　　　　<p><%= current_member.name + "さん" %></br></p>	
+	<%= link_to "プロフィール", account_path(id: current_member.id) %></br>
+	<%= link_to "貸出中一覧", member_rentals_path(member_id: current_member.id) %></br>
+	<%= link_to "予約中一覧", member_reservations_path(member_id: current_member.id) %></br>
+        <%= link_to "貸出履歴" %></br>
 	<%= link_to "ログアウト", :session,
       method: :delete, data: { confirm: "ログアウトしますか？" } %>
   </p>

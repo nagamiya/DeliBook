@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 	root "top#index"
 
-	resources :members
+	resources :members do
+		resources :rentals
+		resources :reservations
+        end
 	resources :books do
 	  collection { get "search" }
 	end

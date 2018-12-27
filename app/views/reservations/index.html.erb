@@ -1,0 +1,26 @@
+<h2>予約中一覧画面--ReservationsControllerのindex</h2>
+<%= @member.name + "さんの予約一覧" %>
+<% if @reservations.present? %>
+  <% count = 0 %>
+  <% @reservations.each do |reservation| %>
+  <% count = count + 1 %>
+    <table>
+    <tr>
+      <th>No.</th>
+      <th>タイトル</th>
+      <th>本ID</th>
+      <th>在庫数</th>
+      <th>配達</th>
+    </tr>
+    <tr>
+      <td><%= count %></td>
+      <td><%= reservation.book.name %></td>
+      <td><%= reservation.book_id %></td>
+      <td>在庫数</td>
+      <td>配達</td>
+    </tr>
+    </table>
+  <% end %>
+<% else %>
+  <p>予約はありません</p>
+<% end %>

@@ -29,6 +29,6 @@
 
 </table>
 <p>所蔵数：<%= @book.stock_num %></p>
-<p>貸出数：<%= @book.stock_num - @rental_num></p> 
-<p>予約数：</p>
-<p>在庫数</p>
+<p>貸出数：<%= @rental_num %></p> 
+<p>予約数：<%= @reservation_num %></p>
+<p>在庫数：<%= @book.stock_num - @rental_num %></p>

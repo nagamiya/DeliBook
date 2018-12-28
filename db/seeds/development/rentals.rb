@@ -1,8 +1,8 @@
-book_ids = %w(1 2 3)
-member_ids = %w(1 2 3)
-rent_dates = ["2018-12-01", "2018-12-10", "2018-12-20"]
-return_dates = ["2018-12-08", "2018-12-17", "2018-12-27"]
-0.upto(2) do |idx|
+book_ids = %w(1 2 3 2 3 3)
+member_ids = %w(1 2 3 1 2 3)
+rent_dates = ["2018-12-01", "2018-12-10", "2018-12-20","2019-1-01", "2019-1-10", "2019-1-20"]
+return_dates = ["2018-12-08", "2018-12-17", "2018-12-27", nil, nil, nil]
+0.upto(5) do |idx|
 	Rental.create(
 	  book_id: book_ids[idx],
 	  member_id: member_ids[idx],

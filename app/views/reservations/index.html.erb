@@ -10,14 +10,14 @@
       <th>タイトル</th>
       <th>本ID</th>
       <th>在庫数</th>
-      <th>配達</th>
+      <th>編集</th>
     </tr>
     <tr>
       <td><%= count %></td>
-      <td><%= reservation.book.name %></td>
+      <td><%= link_to reservation.book.name, book_path(reservation.book) %></td>
       <td><%= reservation.book_id %></td>
-      <td>在庫数</td>
-      <td>配達</td>
+      <td><%= reservation.book.stock_num  %></td>
+      <td><%= link_to "とりけし" %></td>
     </tr>
     </table>
   <% end %>

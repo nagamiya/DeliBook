@@ -1,1 +1,30 @@
 <h2>貸出中一覧画面--RentalControllerのindex</h2>
+<%= @member.name + "さんの貸出中一覧" %>
+<% if @rentals.present? %>
+  <% count = 0 %>
+  <% @rentals.each do |rental| %>
+  <% count = count + 1 %>
+    <table>
+    <tr>
+      <th>No.</th>
+      <th>タイトル</th>
+      <th>本ID</th>
+      <th>在庫数</th>
+      <th>配達</th>
+    </tr>
+    <tr>
+      <td><%= count %></td>
+      <td><%= link_to rental.book.name, book_path(rental.book) %></td>
+      <td><%= rental.book_id %></td>
+      <td><%= rental.book.stock_num.to_s + "（これは所蔵数）"  %></td>
+      <% if rental.is_delivered %>
+        <td>済</td>
+      <% else %>
+        <td>未</td>
+      <% end %>
+    </tr>
+    </table>
+  <% end %>
+<% else %>
+  <p>貸出はありません</p>
+<% end %>

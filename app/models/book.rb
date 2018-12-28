@@ -20,5 +20,29 @@ class Book < ActiveRecord::Base
 	    rel 
 	  end
 
+	  def rental_num(query)
+	     rel = order("id")
+	     if query.present?
+		#puts "pppppppppppppppppp"
+		#puts query.id
+		rel = Book.joins(:rentals)
+		rel = rel.where("Rentals.book_id = ? " , query.id)
+		rel = rel.count
+	     end
+	    rel 
+	  end
+
+	  def reservation_num(query)
+	     rel = order("id")
+	     if query.present?
+		#puts "pppppppppppppppppp"
+		#puts query.id
+		rel = Book.joins(:reservations)
+		rel = rel.where("Reservations.book_id = ? " , query.id)
+		rel = rel.count
+	     end
+	    rel 
+	  end
+
 	end
 end

@@ -2,7 +2,7 @@
 <%= @member.name + "さんの予約一覧" %>
 <% if @reservations.present? %>
   <% count = 0 %>
-  <% @reservations.each do |reservation| %>
+  <% @reservations.each do |rs| %>
   <% count = count + 1 %>
     <table>
     <tr>
@@ -14,9 +14,9 @@
     </tr>
     <tr>
       <td><%= count %></td>
-      <td><%= link_to reservation.book.name, book_path(reservation.book) %></td>
-      <td><%= reservation.book_id %></td>
-      <td><%= reservation.book.stock_num  %></td>
+      <td><%= link_to rs.book.name, book_path(rs.book) %></td>
+      <td><%= rs.book_id %></td>
+      <td><%= @zaiko %></td>
       <td><%= link_to "とりけし" %></td>
     </tr>
     </table>

@@ -23,6 +23,13 @@ class AccountsController < ApplicationController
     end
   end
 
+  def destroy
+	puts "destroy!!!!!!!!!!!!!!!!!!!"
+    @member = current_member
+    @member.destroy
+    redirect_to root_path, notice: "退会しました。"    
+  end
+
   private
   def account_params
     attrs = [:user_id, :name, :place, :tel, :mail_address, :defpassword, :password_confirmation]
@@ -30,5 +37,4 @@ class AccountsController < ApplicationController
   end
 end
 
-#$2a$10$W9OBP/VsrSzT8QuBoC2N8.Dv5Lv9shRU9OQz7UIpKY/Ldbc2jaycu
 

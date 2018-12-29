@@ -36,8 +36,6 @@ class MembersController < ApplicationController
   #  end
   #end
 
-  def destroy
-  end
 
   def search
   end

@@ -10,6 +10,18 @@ class Reservation < ActiveRecord::Base
 		rel = rel.where("Books.id = ?", "q")
 	    end
 	  end
+
+	  #def rental_num(query)
+	  #   rel = order("id")
+	  #   if query.present?
+	#	#puts "pppppppppppppppppp"
+	#	#puts query.id
+	#	rel = Reservation.joins(:book)
+	#	rel = rel.where("Reservations.book_id = ? " , query.id)
+	#	rel = rel.count
+	 #    end
+	  #  rel 
+	  #end
 	end
 
 end

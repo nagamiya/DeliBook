@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 	  collection { get "search" }
 	end
 	resource :session, only: [:create, :destroy]
-	resource :account, only: [:show, :edit, :update]
+	resource :account, only: [:show, :edit, :update, :destroy]
 end

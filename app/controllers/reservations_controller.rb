@@ -24,8 +24,14 @@ class ReservationsController < ApplicationController
 	if @reservation.save
 	  redirect_to controller: "books", action: "show", id: params[:book_id], notice: "貸出予約申請が完了しました"
 	else
-	  render controller: "book", action: "show", id: params[:book_id], notice: "貸出予約申請に失敗しました"
+	  render controller: "books", action: "show", id: params[:book_id], notice: "貸出予約申請に失敗しました"
 	end
+  end
+
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy 
+    redirect_to action: "index", notice: "予約を取り消しました" 
   end
 
 end

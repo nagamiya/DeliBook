@@ -4,12 +4,6 @@ class ReservationsController < ApplicationController
 	puts "aaaaaaaaaaaaaaaa"
         @member = Member.find(params[:member_id])
         @reservations = @member.reservations
-	@book = Book.find_by(params[:rs])
-	rental_num = Book.rental_num(@book)
-	#puts rental_num
-	#puts @book.stock_num
-  	@zaiko = @book.stock_num - rental_num
-	#puts @zaiko
     end
   end
 
@@ -33,5 +27,14 @@ class ReservationsController < ApplicationController
     @reservation.destroy 
     redirect_to action: "index", notice: "予約を取り消しました" 
   end
+
+  def defzaiko(rs)
+	book = Book.find_by(id: rs.id)
+	rental_num = Book.rental_num(rs)
+  	@zaiko = book.stock_num - rental_num
+	return @zaiko
+  end
+
+  helper_method :defzaiko
 
 end

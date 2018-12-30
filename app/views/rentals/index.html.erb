@@ -16,7 +16,7 @@
       <td><%= count %></td>
       <td><%= link_to rental.book.name, book_path(rental.book) %></td>
       <td><%= rental.book_id %></td>
-      <td><%= @zaiko  %></td>
+      <td><%= defzaiko(rental.book) %></td>
       <% if rental.is_delivered %>
         <td>済</td>
       <% else %>

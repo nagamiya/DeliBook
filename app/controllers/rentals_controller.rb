@@ -12,4 +12,19 @@ class RentalsController < ApplicationController
 	#puts @zaiko
     end
   end
+
+  def create
+	puts "!!!!!!!!!!!!!!create!!!!!!!!!!"
+	#if params[:book_id].present?
+	#  puts "bbbbbbbbbbbbb" 
+	#else
+	#  puts "cccccccccccCC" #ずっとこっち
+	#end
+	@rental = Rental.new(book_id: params[:book_id], member_id: current_member.id, rent_date: Date.today, is_delivered: false)
+	if @rental.save
+	  redirect_to controller: "books", action: "show", id: params[:book_id], notice: "貸出申請が完了しました"
+	else
+	  render controller: "book", action: "show", id: params[:book_id], notice: "貸出申請に失敗しました"
+	end
+  end
 end

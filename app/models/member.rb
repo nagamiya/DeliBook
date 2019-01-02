@@ -16,6 +16,15 @@ class Member < ActiveRecord::Base
   end
 
   class << self
+    def search(query)
+      rel = order("id")
+      if query.present?
+        rel = rel.where("name LIKE ?",
+          "%#{query}%")
+      end
+      rel
+    end
+
     def authenticate(user_id, pswd)
       member = find_by(user_id: user_id)
       if member && member.password.present? &&

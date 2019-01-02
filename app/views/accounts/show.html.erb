@@ -1,4 +1,4 @@
 <h2>プロフィール画面--AccountsControllerのshow</h2>
 <%= render "members/body" %>
 <%= link_to "編集", [:edit, :account] %>
-<%= link_to "退会する", account, method: :delete, data: { confirm: "本当に退会しても良いですか？"} %>
+<%= link_to "退会する", account_path, method: :delete, data: { confirm: "本当に退会しても良いですか？"} %>

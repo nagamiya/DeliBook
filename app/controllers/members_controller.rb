@@ -1,20 +1,10 @@
 class MembersController < ApplicationController
   before_action :login_required
   skip_before_action :login_required, only: [:new,:create]
-  def index
-  end
-
-  def show
-    @member = Member.find(params[:id])
-  end
 
   def new
     @member = Member.new
   end
-
-  #def edit
-  #  @member = Member.find(params[:id])
-  #end
 
   def create
     @member = Member.new(member_params)
@@ -24,20 +14,6 @@ class MembersController < ApplicationController
     else
       render "edit"
     end
-  end
-
-  #def update
-  #  @member = Member.find(params[:id])
-  #  @member.assign_attributes(member_params)
-  #  if @member.save
-  #    redirect_to :action => "show", notice: "会員情報を更新しました。"
-  #  else
-  #    render "edit"
-  #  end
-  #end
-
-
-  def search
   end
 
   private

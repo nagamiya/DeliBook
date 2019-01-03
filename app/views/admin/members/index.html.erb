@@ -15,7 +15,12 @@
   </tr>
   <% @members.each do |member| %>
   <tr>
-    <td style="text-align: right"><%= link_to member.id, [:admin, member] %>
+    <td style="text-align: right">
+    <% if member == current_member %>
+      <td><%= link_to member.id, account_path(id: current_member.id) %></td>
+    <% else %>
+      <td><%= link_to member.id, [:admin, member] %></td>
+    <% end %>
     <td><%= member.name %></td>
   </tr>
   <% end %>

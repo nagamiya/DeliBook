@@ -6,11 +6,11 @@ class Admin::MembersController < Admin::Base
 
   def show
     @member = Member.find(params[:id])
-    if params[:format].in?(["jpg", "png", "gif"])
-      send_image
-    else
-      render "show"
-    end
+    #if params[:format].in?(["jpg", "png", "gif"])
+    #  send_image
+    #else
+    #  render "show"
+    #end
   end
 
   def new
@@ -34,7 +34,7 @@ class Admin::MembersController < Admin::Base
 
   def update
     @member = Member.find(params[:id])
-    @member.assign_attributes(member_params)
+    @member.assign_attributes(member_params2)
     if @member.save
       redirect_to [:admin, @member], notice: "会員情報を更新しました。"
     else
@@ -53,9 +53,16 @@ class Admin::MembersController < Admin::Base
     render "index"
   end
 
+  #管理者によるアカウント追加用
   private
   def member_params
     attrs = [:user_id, :name, :place, :tel, :mail_address,:defpassword, :password_confirmation, :is_admin]
+    params.require(:member).permit(attrs)
+  end
+  #管理者による会員のプロフィール情報編集用
+  private
+  def member_params2
+    attrs = [:user_id, :name, :place, :tel, :mail_address,:defpassword, :password_confirmation]
     params.require(:member).permit(attrs)
   end
 

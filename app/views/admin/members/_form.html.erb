@@ -19,6 +19,11 @@
     <th><%= form.label :mail_address %></th>
     <td><%= form.text_field :mail_address %></td>
   </tr>
+  <td>
+    <%= form.check_box :is_admin,
+            disabled: !current_member.is_admin? %>
+    <%= form.label :is_admin, "管理者" %>
+  </td>
   <tr>
     <th><%= form.label :defpassword %></th>
     <td><%= form.password_field :defpassword %></td>

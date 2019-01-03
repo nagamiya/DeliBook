@@ -14,7 +14,6 @@
 	<%= link_to "予約中一覧", member_reservations_path(member_id: current_member.id) %></br>
 	<%if current_member.is_admin? %>
 	  <%= link_to "会員一覧", admin_members_path %></br>
-	<% else %>
 	  <%= link_to "貸出申請一覧" %></br>
 	<% end %>
         <%= link_to "貸出履歴" %></br>

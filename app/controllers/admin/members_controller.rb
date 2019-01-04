@@ -6,11 +6,6 @@ class Admin::MembersController < Admin::Base
 
   def show
     @member = Member.find(params[:id])
-    #if params[:format].in?(["jpg", "png", "gif"])
-    #  send_image
-    #else
-    #  render "show"
-    #end
   end
 
   def new

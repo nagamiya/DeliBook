@@ -1,0 +1,6 @@
+<h2>本の新規追加画面--Admin/BooksControllerのnew</h2>
+
+<%= form_for [:admin, @book] do |form| %>
+<%= render "form", form: form %>
+<p><%= form.submit %></p>
+<% end %>

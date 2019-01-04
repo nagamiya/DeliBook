@@ -1,0 +1,7 @@
+<% if current_member %>
+  <% if current_member.is_admin? %>
+    <%= link_to "Topへ", admin_root_path %>
+  <% else %>
+    <%= link_to "Topへ", root_path %>
+  <% end %>
+<% end %>

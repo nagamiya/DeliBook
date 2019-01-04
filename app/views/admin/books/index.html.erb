@@ -1,0 +1,30 @@
+<h2>会員一覧表示画面--MembersControllerのshow</h2>
+
+<%= form_tag :search_admin_members, method: :get do %>
+  <p><%= text_field_tag "q", params[:q] %>
+  <%= submit_tag "検索" %></p>
+<% end %>
+
+<p><%= link_to "会員の新規登録", :new_admin_member  %></p>
+
+<% if @members.present? %>
+<table class="list">
+  <tr>
+    <th>ユーザーID</th>
+    <th>名前</th>
+  </tr>
+  <% @members.each do |member| %>
+  <tr>
+    <td style="text-align: right">
+    <% if member == current_member %>
+      <td><%= link_to member.id, account_path(id: current_member.id) %></td>
+    <% else %>
+      <td><%= link_to member.id, [:admin, member] %></td>
+    <% end %>
+    <td><%= member.name %></td>
+  </tr>
+  <% end %>
+</table>
+<% else %>
+<p>会員情報がありません。</p>
+<% end %>

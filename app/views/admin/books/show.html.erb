@@ -1,0 +1,41 @@
+<h2>本の詳細画面--booksControllerのshow</h2>
+
+<h3><%= @book.name %></h3>
+<table class="book_show">
+  <tr>
+    <th width="150">ISBN</th>
+    <td><%= @book.isbn %></td>
+  </tr>
+  <tr>
+    <th>著者</th>
+    <td>
+	<% @book.authors.each do |author| %> 
+	  <%= author.name %></br>
+	<% end %>
+    </td>
+  </tr>
+  <tr>
+    <th>出版社</th>
+    <td><%= @book.publisher.name %></td>
+  </tr>
+  <tr>
+    <th>ジャンル</th>
+    <td><%= @book.genre.name %></td>
+  </tr>
+  <tr>
+    <th>あらすじ</th>
+    <td><%= @book.summary %></td>
+  </tr>
+</table>
+<% if current_member %>
+  <% if @zaiko > 0 %>
+    <%= link_to "貸出申請をする", member_rentals_path(current_member, book_id: @book.id), method: :post %>
+  <% else %>
+    <%= link_to "貸出予約申請をする", member_reservations_path(current_member, book_id: @book.id), method: :post %>
+  <% end %>
+<% end %>
+
+<p>所蔵数：<%= @book.stock_num %></p>
+<p>貸出数：<%= @rental_num %></p> 
+<p>予約数：<%= @reservation_num %></p>
+<p>在庫数：<%= @zaiko %></p>

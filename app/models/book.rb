@@ -44,5 +44,18 @@ class Book < ActiveRecord::Base
 	    rel 
 	  end
 
+          def get_pid(q)
+            puts "---------change_id START"
+	    puts q
+            rel = order("id")
+	    if q.present?
+	       rel = rel.select("publishers.id")
+	       rel = Book.joins(:publisher)
+	       rel = rel.where("Publishers.name LIKE ?" , q)
+
+	    end
+            rel
+          end
+
 	end
 end

@@ -33,6 +33,7 @@
   <% else %>
     <%= link_to "貸出予約申請をする", member_reservations_path(current_member, book_id: @book.id), method: :post %>
   <% end %>
+  <%= link_to "検索結果一覧に戻る", :back %>
 <% end %>
 
 <p>所蔵数：<%= @book.stock_num %></p>

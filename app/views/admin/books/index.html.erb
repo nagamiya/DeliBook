@@ -1,30 +1,29 @@
-<h2>会員一覧表示画面--MembersControllerのshow</h2>
+<h2>本の検索結果画面--Admin/booksControllerのindex</h2>
+<%= link_to "本の追加", new_admin_book_path %>
 
-<%= form_tag :search_admin_members, method: :get do %>
-  <p><%= text_field_tag "q", params[:q] %>
-  <%= submit_tag "検索" %></p>
-<% end %>
-
-<p><%= link_to "会員の新規登録", :new_admin_member  %></p>
-
-<% if @members.present? %>
 <table class="list">
   <tr>
-    <th>ユーザーID</th>
-    <th>名前</th>
+    <th>No.</th>
+    <th>タイトル</th>
+    <th>ISBN</th>
+    <th>著者</th>
+    <th>出版社</th>
+    <th>ジャンル</th>
+    <th>在庫数</th>
   </tr>
-  <% @members.each do |member| %>
+  <% @books.each do |book| %>
   <tr>
-    <td style="text-align: right">
-    <% if member == current_member %>
-      <td><%= link_to member.id, account_path(id: current_member.id) %></td>
-    <% else %>
-      <td><%= link_to member.id, [:admin, member] %></td>
-    <% end %>
-    <td><%= member.name %></td>
+    <td style="text-align: right"><%= book.id %></td>
+    <td><%= link_to book.name, [:admin,book] %></td>
+    <td><%= book.isbn %></td>
+    <td>
+	<% book.authors.each do |author| %> 
+	  <%= author.name %></br>
+	<% end %>
+    </td>
+    <td><%= book.publisher.name %></td>
+    <td><%= book.genre.name %></td>
+    <td><%= book.stock_num %></td>
   </tr>
   <% end %>
 </table>
-<% else %>
-<p>会員情報がありません。</p>
-<% end %>

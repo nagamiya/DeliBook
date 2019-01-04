@@ -1,7 +1,7 @@
 class Admin::BooksController < Admin::Base
-	#def index
-	#  @books = Book.order("id")
-	#end
+	def index
+	  @books = Book.order("id")
+	end
 
 	def show
 	  @book = Book.find(params[:id])
@@ -18,28 +18,8 @@ class Admin::BooksController < Admin::Base
 	end
 
 	def create
-	  #@book = Book.new(params[:book])
-	  #if @book.publisher_id.present?
-	  #  puts params[:publisher]
-	  #else
-	#	puts "NO"
-	#  end
-	#  @book.publisher_id = Book.get_pid(params[:publisher])
-
    	  @book = Book.new(book_params)
-
-
-	#  @book.publisher_id = 3
-       #   pid = Book.get_pid(@book)
-	#  puts pid.ids
-	#  @book.publisher_id = pid
-	  
-	#  if @book1.present?
-	#    puts "present"
-	#    puts @book1.publisher_id
-	#  end
-
-   	  puts "!!!!!!!!!!!!!admin/books/create"
+   	 # puts "!!!!!!!!!!!!!admin/books/create"
    	  if @book.save
     	    redirect_to [:admin, @book], notice: "本の登録が完了しました"
     	  else
@@ -68,7 +48,6 @@ class Admin::BooksController < Admin::Base
 
   	private
   	def book_params          
-    	#  attrs = [:name, :isbn, :authors_id, :publisher_id, :genre_id, :summary, :stock_num]
     	  params.require(:book).permit(:name, :isbn, :publisher_id, :genre_id, :summary, :stock_num, {:author_ids =>[]} )
   	end
 end

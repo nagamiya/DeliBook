@@ -29,11 +29,13 @@
 </table>
 <% if current_member %>
   <% if @zaiko > 0 %>
-    <%= link_to "貸出申請をする", member_rentals_path(current_member, book_id: @book.id), method: :post %>
+    <%= link_to "貸出申請をする" %>
   <% else %>
-    <%= link_to "貸出予約申請をする", member_reservations_path(current_member, book_id: @book.id), method: :post %>
+    <%= link_to "貸出予約申請をする" %>
   <% end %>
   <%= link_to "検索結果一覧に戻る", :back %>
+  <%= link_to "編集", edit_admin_book_path %>
+  <%= link_to "削除", admin_book_path, method: :delete, data: { confirm: "本の取扱いをやめますか？"}  %>
 <% end %>
 
 <p>所蔵数：<%= @book.stock_num %></p>

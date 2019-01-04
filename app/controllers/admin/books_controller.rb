@@ -15,6 +15,7 @@ class Admin::BooksController < Admin::Base
 	end
 
 	def edit
+	  @book = Book.find(params[:id])
 	end
 
 	def create
@@ -28,6 +29,13 @@ class Admin::BooksController < Admin::Base
 	end
 
 	def update
+	  @book = Book.find(params[:id])
+	  @book.assign_attributes(book_params)
+	  if @book.save
+	    redirect_to [:admin, @book], notice: "本の詳細情報を更新しました。"
+	  else
+	    render "edit"
+	  end
 	end
 
 	def destroy

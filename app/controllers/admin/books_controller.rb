@@ -39,16 +39,17 @@ class Admin::BooksController < Admin::Base
 	end
 
 	def destroy
+	  @book = Book.find(params[:id])
+          @book.destroy
+          redirect_to search_admin_books_path, notice: "該当する本を削除しました。"
 	end
 
 	def search 
 	  @book_title = params[:book_title]
-	  #puts @book_title
 	  @book_author = params[:book_author]
 	  @book_publisher = params[:book_publisher]
 	  @book_genre = params[:book_genre]
 	  @book_info = [@book_title, @book_author, @book_publisher, @book_genre]
-	  #puts @book_info
 
 	  @books = Book.search(@book_info)
 	  render "index"

@@ -6,17 +6,19 @@
   <p class="member">
 	<%if current_member.is_admin? %>
 　　　　　  <p><%= current_member.name + "さん（管理者）" %></br></p>
+	  <%= link_to "プロフィール", account_path(id: current_member.id) %></br>
+	  <%= link_to "会員一覧", admin_members_path %></br>
+	  <%= link_to "貸出中一覧", admin_rentals_path %></br>
+	  <%= link_to "予約中一覧" %></br>
+	  <%= link_to "貸出申請一覧" %></br>
+          <%= link_to "貸出履歴" %></br>
 	<% else %>
 　　　　　  <p><%= current_member.name + "さん" %></br></p>
+	  <%= link_to "プロフィール", account_path(id: current_member.id) %></br>
+	  <%= link_to "貸出中一覧", member_rentals_path(member_id: current_member.id) %></br>
+	  <%= link_to "予約中一覧", member_reservations_path(member_id: current_member.id) %></br>
+          <%= link_to "貸出履歴" %></br>
 	<% end %>	
-	<%= link_to "プロフィール", account_path(id: current_member.id) %></br>
-	<%= link_to "貸出中一覧", member_rentals_path(member_id: current_member.id) %></br>
-	<%= link_to "予約中一覧", member_reservations_path(member_id: current_member.id) %></br>
-	<%if current_member.is_admin? %>
-	  <%= link_to "会員一覧", admin_members_path %></br>
-	  <%= link_to "貸出申請一覧" %></br>
-	<% end %>
-        <%= link_to "貸出履歴" %></br>
 	<%= link_to "ログアウト", :session,
       method: :delete, data: { confirm: "ログアウトしますか？" } %>
   </p>

@@ -19,5 +19,9 @@ Rails.application.routes.draw do
 	  resources :books do
             collection { get "search" }
 	  end
+	  resources :rentals do
+            collection { get "search" }
+            member { get "bookreturn" }
+	  end
         end
 end

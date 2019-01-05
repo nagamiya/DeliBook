@@ -8,22 +8,6 @@ class BooksController < ApplicationController
 	  @rental_num = Book.rental_num(@book)
 	  @reservation_num = Book.reservation_num(@book)
 	  @zaiko = @book.stock_num - @rental_num
-	 # @member = Member.
-	end
-
-	def new
-	end
-
-	def edit
-	end
-
-	def create
-	end
-
-	def update
-	end
-
-	def destroy
 	end
 
 	def search 

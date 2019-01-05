@@ -1,0 +1,38 @@
+<h2>貸出中一覧画面--AAdmin/RentalControllerのindex</h2>
+
+<% if @rentals.present? %>
+  <% count = 0 %>
+  <% @rentals.each do |rental| %>
+  <% if rental.return_date.nil?  %>
+    <% count = count + 1 %>
+    <table>
+    <tr>
+      <th>No.</th>
+      <th>貸出ID</th>
+      <th>タイトル</th>
+      <th>本ID</th>
+      <th>在庫数</th>
+      <th>会員ID</th>
+      <th>配達</th>
+      <th>編集</th>
+    </tr>
+    <tr>
+      <td><%= count %></td>
+      <td><%= rental.id %></td>
+      <td><%= link_to rental.book.name, book_path(rental.book) %></td>
+      <td><%= rental.book_id %></td>
+      <td><%= defzaiko(rental.book) %></td>
+      <td><%= rental.member_id %></td>
+      <% if rental.is_delivered %>
+        <td>済</td>
+      <% else %>
+        <td>未</td>
+      <% end %>
+      <td><%= link_to "返却", bookreturn_admin_rental_path(rental.id) %></td>
+    </tr>
+    </table>
+    <% end %>
+  <% end %>
+<% else %>
+  <p>貸出はありません</p>
+<% end %>

@@ -16,6 +16,11 @@ class RentalsController < ApplicationController
 	end
   end
 
+  def history_index #貸出履歴
+    member_id = params[:member_id]
+    @rentals = Rental.order("id").where.not(return_date: nil).where(is_delivered: true).where(member_id: member_id)
+  end
+
   def defzaiko(rentalbook)
 	book = Book.find_by(id: rentalbook.id)
 	rental_num = Book.rental_num(rentalbook)

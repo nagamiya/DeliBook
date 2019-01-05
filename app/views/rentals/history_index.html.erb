@@ -1,0 +1,34 @@
+<h2>貸出履歴一覧画面--RentalControllerのhistory_index</h2>
+
+<% if @rentals.present? %>
+  <% count = 0 %>
+  <% @rentals.each do |rental| %>
+    <% count = count + 1 %>
+    <table>
+    <tr>
+      <th>No.</th>
+      <th>貸出ID</th>
+      <th>タイトル</th>
+      <th>本ID</th>
+      <th>在庫数</th>
+      <th>配達</th>
+      <th>返却日</th>
+    </tr>
+    <tr>
+      <td><%= count %></td>
+      <td><%= rental.id %></td>
+      <td><%= link_to rental.book.name, book_path(rental.book) %></td>
+      <td><%= rental.book_id %></td>
+      <td><%= defzaiko(rental.book) %></td>
+      <% if rental.is_delivered %>
+        <td>済</td>
+      <% else %>
+        <td>未</td>
+      <% end %>
+      <td><%= rental.return_date %></td>
+    </tr>
+    </table>
+  <% end %>
+<% else %>
+  <p>貸出はありません</p>
+<% end %>

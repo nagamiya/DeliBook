@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 	root "top#index"
 
 	resources :members, only: [:new, :create] do
-		resources :rentals, only: [:index, :create]
+		resources :rentals, only: [:index, :create] do
+		  collection { get "history_index" }
+                end
 		resources :reservations, only: [:index, :create, :destroy]
         end
 	resources :books, only: [:index, :show] do

@@ -1,7 +1,15 @@
 class Admin::RentalsController < Admin::Base
 
-  def index
-    @rentals = Rental.order("id")
+  def index #貸出一覧
+    @rentals = Rental.order("id").where(return_date: nil)
+  end
+
+  def history_index #貸出履歴
+    @rentals = Rental.order("id").where.not(return_date: nil).where(is_delivered: true)
+  end
+
+  def app_index #貸出申請
+    @rentals = Rental.order("id").where(return_date: nil).where(is_delivered: false)
   end
 
   def search

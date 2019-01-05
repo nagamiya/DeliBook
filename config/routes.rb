@@ -20,7 +20,7 @@ Rails.application.routes.draw do
             collection { get "search" }
 	  end
 	  resources :rentals do
-            collection { get "search" }
+            collection { get "search", "history_index", "app_index" }
             member { get "bookreturn" }
 	  end
 	  resources :reservations, only: [:index, :create, :destroy] do

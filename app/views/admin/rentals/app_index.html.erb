@@ -1,4 +1,4 @@
-<h2>貸出中一覧画面--AAdmin/RentalControllerのindex</h2>
+<h2>貸出申請一覧画面--AAdmin/RentalControllerのapp_index</h2>
 
 <%= form_tag :search_admin_rentals, method: :get do %>
   <p><%= text_field_tag "q", params[:q] %>
@@ -32,7 +32,7 @@
       <% else %>
         <td>未</td>
       <% end %>
-      <td><%= link_to "返却", bookreturn_admin_rental_path(rental.id) %></td>
+      <td><%= link_to "実行" %></td>
     </tr>
     </table>
   <% end %>

@@ -1,4 +1,4 @@
-<h2>貸出中一覧画面--AAdmin/RentalControllerのindex</h2>
+<h2>貸出履歴一覧画面--AAdmin/RentalControllerのhistory_index</h2>
 
 <%= form_tag :search_admin_rentals, method: :get do %>
   <p><%= text_field_tag "q", params[:q] %>
@@ -18,7 +18,7 @@
       <th>在庫数</th>
       <th>会員ID</th>
       <th>配達</th>
-      <th>編集</th>
+      <th>返却日</th>
     </tr>
     <tr>
       <td><%= count %></td>
@@ -32,7 +32,7 @@
       <% else %>
         <td>未</td>
       <% end %>
-      <td><%= link_to "返却", bookreturn_admin_rental_path(rental.id) %></td>
+      <td><%= rental.return_date %></td>
     </tr>
     </table>
   <% end %>

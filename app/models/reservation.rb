@@ -11,17 +11,15 @@ class Reservation < ActiveRecord::Base
 	    end
 	  end
 
-	  #def rental_num(query)
-	  #   rel = order("id")
-	  #   if query.present?
-	#	#puts "pppppppppppppppppp"
-	#	#puts query.id
-	#	rel = Reservation.joins(:book)
-	#	rel = rel.where("Reservations.book_id = ? " , query.id)
-	#	rel = rel.count
-	 #    end
-	  #  rel 
-	  #end
+          def search(query)
+            rel = order("id")
+            if query.present?
+	      rel = rel.joins(:book)
+              rel = rel.where("books.name LIKE ?", "%#{query}%")
+            end
+           rel
+          end
+
 	end
 
 end

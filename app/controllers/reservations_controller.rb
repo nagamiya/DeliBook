@@ -8,12 +8,6 @@ class ReservationsController < ApplicationController
   end
 
   def create
-	puts "create!!!!!!!!!!"
-	#if params[:book_id].present?
-	#  puts "bbbbbbbbbbbbb" 
-	#else
-	#  puts "cccccccccccCC" #ずっとこっち
-	#end
 	@reservation = Reservation.new(book_id: params[:book_id], member_id: current_member.id, app_date: Date.today, is_processed: false)
 	if @reservation.save
 	  redirect_to controller: "books", action: "show", id: params[:book_id], notice: "貸出予約申請が完了しました"

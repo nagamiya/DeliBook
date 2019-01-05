@@ -23,5 +23,8 @@ Rails.application.routes.draw do
             collection { get "search" }
             member { get "bookreturn" }
 	  end
+	  resources :reservations, only: [:index, :create, :destroy] do
+            collection { get "search" }
+	  end
         end
 end

@@ -1,0 +1,36 @@
+<h2>予約中一覧画面--AAdmin/ReservationControllerのindex</h2>
+
+<%= form_tag :search_admin_reservations, method: :get do %>
+  <p><%= text_field_tag "q", params[:q] %>
+  <%= submit_tag "検索" %></p>
+<% end %>
+
+<% if @reservations.present? %>
+  <% count = 0 %>
+  <% @reservations.each do |reservation| %>
+    <% count = count + 1 %>
+    <table>
+    <tr>
+      <th>No.</th>
+      <th>予約ID</th>
+      <th>タイトル</th>
+      <th>本ID</th>
+      <th>在庫数</th>
+      <th>会員ID</th>
+      <th>編集</th>
+    </tr>
+    <tr>
+      <td><%= count %></td>
+      <td><%= reservation.id %></td>
+      <td><%= link_to reservation.book.name, book_path(reservation.book) %></td>
+      <td><%= reservation.book_id %></td>
+      <td><%= defzaiko(reservation.book) %></td>
+      <td><%= reservation.member_id %></td>
+      <td><%= link_to "取消",  admin_reservation_path(reservation.id,reservation), method: :delete,
+	data: { confirm: "本当に予約を取り消しても良いですか？"} %></td>
+    </tr>
+    </table>
+  <% end %>
+<% else %>
+  <p>貸出はありません</p>
+<% end %>

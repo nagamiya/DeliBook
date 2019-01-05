@@ -27,6 +27,7 @@ class Book < ActiveRecord::Base
 		#puts query.id
 		rel = Book.joins(:rentals)
 		rel = rel.where("Rentals.book_id = ? " , query.id)
+		rel = rel.where("rentals.return_date", nil)
 		rel = rel.count
 	     end
 	    rel 

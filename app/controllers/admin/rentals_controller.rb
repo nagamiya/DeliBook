@@ -31,6 +31,8 @@ class Admin::RentalsController < Admin::Base
   def defzaiko(rentalbook)
 	book = Book.find_by(id: rentalbook.id)
 	rental_num = Book.rental_num(rentalbook)
+	puts "在庫数："
+	puts rental_num
   	@zaiko = book.stock_num - rental_num
 	return @zaiko
   end

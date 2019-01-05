@@ -1,5 +1,10 @@
 <h2>貸出中一覧画面--AAdmin/RentalControllerのindex</h2>
 
+<%= form_tag :search_admin_rentals, method: :get do %>
+  <p><%= text_field_tag "q", params[:q] %>
+  <%= submit_tag "検索" %></p>
+<% end %>
+
 <% if @rentals.present? %>
   <% count = 0 %>
   <% @rentals.each do |rental| %>

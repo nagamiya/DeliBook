@@ -32,7 +32,7 @@
       <% else %>
         <td>未</td>
       <% end %>
-      <td><%= link_to "実行" %></td>
+      <td><%= link_to "実行", rental_do_admin_rental_path(rental.id) %></td>
     </tr>
     </table>
   <% end %>

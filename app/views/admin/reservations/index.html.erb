@@ -27,7 +27,13 @@
       <td><%= defzaiko(reservation.book) %></td>
       <td><%= reservation.member_id %></td>
       <td><%= link_to "取消",  admin_reservation_path(reservation.id,reservation), method: :delete,
-	data: { confirm: "本当に予約を取り消しても良いですか？"} %></td>
+	data: { confirm: "本当に予約を取り消しても良いですか？"} %>：
+          <% if defzaiko(reservation.book) > 0 %>
+	    <%= link_to "貸出申請に進む", 
+	   admin_rentals_path(book: reservation.book_id, member: reservation.member_id),
+	   method: :post %>
+	  <% end %>
+      </td>
     </tr>
     </table>
   <% end %>

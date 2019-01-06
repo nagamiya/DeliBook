@@ -27,16 +27,22 @@
     <td><%= @book.summary %></td>
   </tr>
 </table>
-<% if current_member %>
-  <% if @zaiko > 0 %>
-    <%= link_to "貸出申請をする" %>
-  <% else %>
-    <%= link_to "貸出予約申請をする" %>
+<% if @zaiko > 0 %>
+  <%= form_tag :admin_rentals, method: :post do %>
+    <p>会員ID<%= text_field_tag "member", params[:member] %>
+    <%= hidden_field_tag "book", @book.id %>
+    <%= submit_tag "貸出申請代替をする" %></p>
   <% end %>
-  <%= link_to "検索結果一覧に戻る", :search_admin_books %>
-  <%= link_to "編集", edit_admin_book_path %>
-  <%= link_to "削除", admin_book_path, method: :delete, data: { confirm: "本の取扱いをやめますか？"}  %>
+<% else %>
+  <%= form_tag :admin_reservations, method: :post do %>
+    <p><%= text_field_tag "member", params[:member] %>
+    <%= hidden_field_tag "book", @book.id %>
+    <%= submit_tag "予約申請代替をする" %></p>
+  <% end %>
 <% end %>
+<%= link_to "検索結果一覧に戻る", :search_admin_books %>
+<%= link_to "編集", edit_admin_book_path %>
+  <%= link_to "削除", admin_book_path, method: :delete, data: { confirm: "本の取扱いをやめますか？"}  %>
 
 <p>所蔵数：<%= @book.stock_num %></p>
 <p>貸出数：<%= @rental_num %></p> 

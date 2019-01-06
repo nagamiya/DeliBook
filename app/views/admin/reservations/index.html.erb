@@ -22,7 +22,7 @@
     <tr>
       <td><%= count %></td>
       <td><%= reservation.id %></td>
-      <td><%= link_to reservation.book.name, book_path(reservation.book) %></td>
+      <td><%= link_to reservation.book.name, admin_book_path(reservation.book) %></td>
       <td><%= reservation.book_id %></td>
       <td><%= defzaiko(reservation.book) %></td>
       <td><%= reservation.member_id %></td>

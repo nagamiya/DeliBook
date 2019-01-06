@@ -4,12 +4,24 @@ class Admin::RentalsController < Admin::Base
     @rentals = Rental.order("id").where(return_date: nil)
   end
 
-  def history_index #貸出履歴
+  def history_index #貸出履歴一覧
     @rentals = Rental.order("id").where.not(return_date: nil).where(is_delivered: true)
   end
 
-  def app_index #貸出申請
+  def app_index #貸出申請一覧
     @rentals = Rental.order("id").where(return_date: nil).where(is_delivered: false)
+  end
+
+  def create
+    puts "!!!!!!!!!!!!!!create(admin)!!!!!!!!!!"
+    puts params[:member]
+    puts params[:book]
+    @rental = Rental.new(book_id: params[:book], member_id: params[:member], rent_date: Date.today, is_delivered: false)
+    if @rental.save
+      redirect_to controller: "books", action: "show", id: params[:book], notice: "貸出申請代替が完了しました"
+    else
+      render controller: "book", action: "show", id: params[:book], notice: "貸出申請代替に失敗しました"
+    end
   end
 
   def search

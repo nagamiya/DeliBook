@@ -1,23 +1,45 @@
 body {
-	margin: 0;
-	padding: 5;
+  color: #330000;
+  margin: 0;
+  padding: 5;
 }
-
+/* ---sidebar--- */
 div#sidebar {
-	float: right;
-	width: 250px;
-	background-color: #eee;
-	padding: 5px;
+  color: #330000;
+  background-color: #996633;
+  float: right;
+  height: 600px;  width: 200px;
+  padding: 5px;
 }
-
-div#header {
-	background-color: #aaa;	
-}
-
+/* -------------- */
+/* ----search---- */
 div#search {
-	background-color: #ccc;
+  color: #330000;
+  background-color: #996633;
 }
-
+.submit_button {
+  
+}
+/* -------------- */
+/* ----login----- */
 #login_form {
-	background-color: #999;
+  background-color: #996633;
 }
+/* -------------- */
+/* ----header---- */
+div#header {
+  color: #330000;
+  background-color: #996633;
+  height: 50px;
+  padding: 0.5%;	
+}
+h1{
+  margin: 0px;
+}
+h1:first-letter {
+  color: #ff0066;
+}
+/* -------------- */
+
+
+

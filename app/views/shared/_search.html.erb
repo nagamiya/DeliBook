@@ -1,26 +1,22 @@
-<h2>検索部分だね</h2>
+<h2></h2>
 <% if current_member && current_member.is_admin %>
 	<%= form_tag :search_admin_books, method: :get do %>
 	<table id="search_form">
 	<tr>
 	  <td style="text-align: right">タイトル</td>
 	  <td><%= text_field_tag "book_title", "", style: "width: 120px" %></td>
-	</tr>
-	<tr>
 	  <td style="text-align: right">著者</td>
 	  <td><%= text_field_tag "book_author", "", style: "width: 120px" %></td>
 	</tr>
 	<tr>
 	  <td style="text-align: right">出版社</td>
 	  <td><%= text_field_tag "book_publisher", "", style: "width: 120px" %></td>
-	</tr>
-	<tr>
 	  <td style="text-align: right">ジャンル</td>
 	  <td><%= text_field_tag "book_genre", "", style: "width: 120px" %></td>
 	</tr>
 	<tr>
 	  <td colspan="2" style="text-align: center">
-	  <%= submit_tag "検索" %></td>
+	  <%= button_tag "検索", class: "submit_button" %></td>
 	</tr>
 	</table>
 	<% end %>
@@ -30,23 +26,17 @@
 	<tr>
 	  <td style="text-align: right">タイトル</td>
 	  <td><%= text_field_tag "book_title", "", style: "width: 120px" %></td>
-	</tr>
-	<tr>
 	  <td style="text-align: right">著者</td>
 	  <td><%= text_field_tag "book_author", "", style: "width: 120px" %></td>
 	</tr>
 	<tr>
 	  <td style="text-align: right">出版社</td>
 	  <td><%= text_field_tag "book_publisher", "", style: "width: 120px" %></td>
-	</tr>
-	<tr>
 	  <td style="text-align: right">ジャンル</td>
 	  <td><%= text_field_tag "book_genre", "", style: "width: 120px" %></td>
 	</tr>
-	<tr>
-	  <td colspan="2" style="text-align: center">
-	  <%= submit_tag "検索" %></td>
-	</tr>
+	  <td class = "search_td" colspan="2" style="text-align: center">
+	  <%= button_tag "検索", class: "submit_button" %></td>
 	</table>
 	<% end %>
 <% end %>

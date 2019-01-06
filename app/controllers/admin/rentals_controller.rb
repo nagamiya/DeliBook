@@ -59,7 +59,7 @@ class Admin::RentalsController < Admin::Base
     @rental = Rental.find(params[:id])
     @rental.is_delivered = true
     if @rental.save
-      redirect_to app_index_admin_rentals_path, notice: "本の貸出を実行しました。"
+      redirect_to app_index_admin_rentals_path, notice: "本の貸出を実行しました。"     
     else
       render "index"
     end

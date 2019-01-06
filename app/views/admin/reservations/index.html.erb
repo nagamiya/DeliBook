@@ -30,7 +30,7 @@
 	data: { confirm: "本当に予約を取り消しても良いですか？"} %>：
           <% if defzaiko(reservation.book) > 0 %>
 	    <%= link_to "貸出申請に進む", 
-	   admin_rentals_path(book: reservation.book_id, member: reservation.member_id),
+	   create_fromreservation_admin_rentals_path(id: reservation, book: reservation.book_id, member: reservation.member_id),
 	   method: :post %>
 	  <% end %>
       </td>

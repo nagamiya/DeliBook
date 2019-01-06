@@ -24,6 +24,20 @@ class Admin::RentalsController < Admin::Base
     end
   end
 
+  def create_fromreservation
+    puts "!!!!!!!!!!!!!!createfromreservation(admin)!!!!!!!!!!"
+    puts params[:member]
+    puts params[:book]
+    @reservation = Reservation.find(params[:id])
+    @reservation.is_processed = true
+    @rental = Rental.new(book_id: params[:book], member_id: params[:member], rent_date: Date.today, is_delivered: false)
+    if @rental.save && @reservation.save
+      redirect_to controller: "books", action: "show", id: params[:book], notice: "予約申請を貸出申請に移行しました"
+    else
+      render controller: "book", action: "show", id: params[:book], notice: "予約申請の貸出申請移行に失敗しました"
+    end
+  end
+
   def search
     @rentals = Rental.search(params[:q])
     render "index"

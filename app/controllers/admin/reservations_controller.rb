@@ -1,6 +1,6 @@
 class Admin::ReservationsController < Admin::Base
   def index
-    @reservations = Reservation.order("id")
+    @reservations = Reservation.order("id").where(is_processed: false)
   end
 
   def create

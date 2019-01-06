@@ -41,8 +41,13 @@ class Admin::MembersController < Admin::Base
 
   def destroy
     @member = Member.find(params[:id])
-    @member.destroy
-    redirect_to :admin_members, notice: "会員を削除しました。"
+    @rentals = Rental.order("id").where(member_id: @member.id).where(return_date: nil)
+    if @rentals.empty?   
+      @member.destroy
+      redirect_to :admin_members, notice: "会員を削除しました。"
+    else
+      redirect_to :admin_members, notice: "会員削除に失敗しました。貸出処理が終了していません。"
+    end
   end
 
   def search

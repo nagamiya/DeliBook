@@ -1,5 +1,5 @@
-<h2>貸出中一覧画面--RentalControllerのindex</h2>
-<%= @member.name + "さんの貸出中一覧" %>
+<h2>貸出一覧画面--RentalControllerのindex</h2>
+<p>貸出中の本や貸出申請後の許可待ち・配達待機中の本のリストです。</p>
 <% if @rentals.present? %>
   <% count = 0 %>
   <% @rentals.each do |rental| %>
@@ -10,7 +10,7 @@
       <th>タイトル</th>
       <th>本ID</th>
       <th>在庫数</th>
-      <th>配達</th>
+      <th>状態</th>
     </tr>
     <tr>
       <td><%= count %></td>
@@ -18,9 +18,9 @@
       <td><%= rental.book_id %></td>
       <td><%= defzaiko(rental.book) %></td>
       <% if rental.is_delivered %>
-        <td>済</td>
+        <td>貸出し済み</td>
       <% else %>
-        <td>未</td>
+        <td>待機中</td>
       <% end %>
     </tr>
     </table>

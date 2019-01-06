@@ -34,8 +34,5 @@ class Admin::ReservationsController < Admin::Base
   	@zaiko = book.stock_num - rental_num
 	return @zaiko
   end
-
-
-
   helper_method :defzaiko
 end

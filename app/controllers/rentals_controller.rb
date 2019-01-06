@@ -2,7 +2,7 @@ class RentalsController < ApplicationController
   def index
     if params[:member_id]
         @member = Member.find(params[:member_id])
-        @rentals = @member.rentals
+        @rentals = @member.rentals.where(return_date: nil)#.where(is_delivered: true)
     end
   end
 

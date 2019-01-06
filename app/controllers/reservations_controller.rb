@@ -1,9 +1,8 @@
 class ReservationsController < ApplicationController
   def index
     if params[:member_id]
-	puts "aaaaaaaaaaaaaaaa"
         @member = Member.find(params[:member_id])
-        @reservations = @member.reservations
+        @reservations = @member.reservations.where(is_processed: false)
     end
   end
 

@@ -40,8 +40,14 @@ class Admin::BooksController < Admin::Base
 
 	def destroy
 	  @book = Book.find(params[:id])
-          @book.destroy
-          redirect_to search_admin_books_path, notice: "該当する本を削除しました。"
+	  @rentals = Rental.order("id").where(book_id: @book.id).where(return_date: nil)
+	  @reservations = Reservation.order("id").where(book_id: @book.id).where(is_processed: false)
+	  if @rentals.empty? and @reservations.empty?
+            @book.destroy
+            redirect_to search_admin_books_path, notice: "該当する本を削除しました。"
+	  else
+	    redirect_to admin_book_path, notice: "削除に失敗しました。貸出・予約処理が終了していません。"
+	  end
 	end
 
 	def search 
@@ -54,6 +60,14 @@ class Admin::BooksController < Admin::Base
 	  @books = Book.search(@book_info)
 	  render "index"
 	end
+
+        def defzaiko(book)
+	  book = Book.find_by(id: book.id)
+	  rental_num = Book.rental_num(book)
+  	  @zaiko = book.stock_num - rental_num
+	  return @zaiko
+        end
+        helper_method :defzaiko
 
   	private
   	def book_params          

@@ -24,10 +24,14 @@ class AccountsController < ApplicationController
   end
 
   def destroy
-	puts "destroy!!!!!!!!!!!!!!!!!!!"
-    @member = current_member
-    @member.destroy
-    redirect_to root_path, notice: "退会しました。"    
+    @rentals = Rental.order("id").where(member_id: current_member.id).where(return_date: nil)
+    if @rentals.empty?
+      @member = current_member
+      @member.destroy
+      redirect_to root_path, notice: "退会しました。" 
+    else
+      redirect_to account_path, notice: "退会に失敗しました。貸出処理が終了していません。"
+    end
   end
 
   private

@@ -22,4 +22,12 @@ class BooksController < ApplicationController
 	  @books = Book.search(@book_info)
 	  render "index"
 	end
+
+        def defzaiko(book)
+	  book = Book.find_by(id: book.id)
+	  rental_num = Book.rental_num(book)
+  	  @zaiko = book.stock_num - rental_num
+	  return @zaiko
+        end
+        helper_method :defzaiko
 end

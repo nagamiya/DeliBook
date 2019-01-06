@@ -1,9 +1,10 @@
-names = %w(本 本本 本本本 本本本本 本本本本本)
+names = %w(ビジネスマナーブック ねことぼく Rails逆引き本 はじめてのスイーツレシピ 塩の街)
 isbns = %w(000-0000 111-1111 222-2222 333-3333 444-4444)
 genre_ids = %w(1 2 3 4 5)
 publisher_ids = %w(1 2 3 4 5)
-stock_nums = %w(5 10 15 20 25)
-summarys = %w(aaaaaaaaa bbbbbbbbb cccccccc dddddddddd eeeeeeee)
+stock_nums = %w(2 3 4 5 6)
+summarys = %w(誰でもすぐに身につくかもしれないマナーブック。 生き物の大切さを知ることができるこどもむけ絵本。 
+このシステムも作れるようになる、Railsでの開発はこれ１本。 おいしいスイーツを作って女子力をあげよう！ "塩害"が発生した街で交錯する人間たちのストーリー)
 
 0.upto(4) do |idx|
 	@book = Book.create(

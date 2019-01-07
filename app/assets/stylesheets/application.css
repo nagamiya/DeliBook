@@ -8,30 +8,43 @@ div#sidebar {
   color: #330000;
   background-color: #996633;
   float: right;
-  height: 600px;  width: 200px;
-  padding: 5px;
+  height: 600px;  width: 185px;
+}
+#membername {
+  padding-left: 10px;
 }
 /* -------------- */
 /* ----search---- */
 div#search {
   color: #330000;
   background-color: #996633;
+  height: 80px;
+ 
 }
-.submit_button {
-  
+#search_button {
+  padding: 20px 35px;
+  margin-left: 10px; 
 }
 /* -------------- */
 /* ----login----- */
 #login_form {
-  background-color: #996633;
+  background-color: rgba(256, 0, 102, 0.44);
+  padding: 10px 25px;
+  margin: 10px;
+  
 }
+#login {
+  padding-left: 10px;
+  margin: 10px 0px;
+}
+
 /* -------------- */
 /* ----header---- */
 div#header {
   color: #330000;
   background-color: #996633;
   height: 50px;
-  padding: 0.5%;	
+  padding: 1%;	
 }
 h1{
   margin: 0px;
@@ -40,6 +53,35 @@ h1:first-letter {
   color: #ff0066;
 }
 /* -------------- */
+/* --submitbutton-- */
+.submit_button {
+  color: #ff0066;
+  background-color: rgba(51, 0, 0, 0.7);
+  text-align: center;
+  display: block; 
+  font-weight: 800;
+  padding: 5px 35px;
+  margin: 5px 0px;
+  border-radius: 10px;
+  border: none;
+}
+.submit_button:hover {
+  color: #330000;
+  background-color: rgba(256, 256, 256, 0.5); 
+  
+}
+/* ---------------- */
+a {
+  color: #330000;
+  padding-left: 10px;
+  text-decoration: none;
+}
+a:hover {
+  color: rgba(256, 256, 256, 0.8);
+  text-decoration: underline;
+}
+
+
 
 
 

@@ -1,24 +1,23 @@
-<h2>サイドバー</h2>
 <%= render "shared/login_form" unless current_member %>
 
 <% if current_member %>
   <p class="member">
 	<%if current_member.is_admin? %>
-　　　　　  <p><%= current_member.name + "さん（管理者）" %></br></p>
-	  <%= link_to "プロフィール", account_path(id: current_member.id) %></br>
-	  <%= link_to "会員一覧", admin_members_path %></br>
-	  <%= link_to "貸出中一覧", admin_rentals_path %></br>
-	  <%= link_to "予約中一覧", admin_reservations_path %></br>
-	  <%= link_to "貸出申請一覧", app_index_admin_rentals_path %></br>
-          <%= link_to "貸出履歴", history_index_admin_rentals_path %></br>
+　　　　　  <p id = "membername"><%= current_member.name + "さん（管理者）" %></br></p>
+	  <%= link_to "▶プロフィール", account_path(id: current_member.id) %></br>
+	  <%= link_to "▶会員一覧", admin_members_path %></br>
+	  <%= link_to "▶貸出中一覧", admin_rentals_path %></br>
+	  <%= link_to "▶予約中一覧", admin_reservations_path %></br>
+	  <%= link_to "▶貸出申請一覧", app_index_admin_rentals_path %></br>
+          <%= link_to "▶貸出履歴", history_index_admin_rentals_path %></br>
 	<% else %>
-　　　　　  <p><%= current_member.name + "さん" %></br></p>
-	  <%= link_to "プロフィール", account_path(id: current_member.id) %></br>
-	  <%= link_to "貸出中一覧", member_rentals_path(member_id: current_member.id) %></br>
-	  <%= link_to "予約中一覧", member_reservations_path(member_id: current_member.id) %></br>
-          <%= link_to "貸出履歴" , history_index_member_rentals_path(member_id: current_member.id)%></br>
+　　　　　  <p id = "membername"><%= current_member.name + "さん" %></br></p>
+	  <%= link_to "▶プロフィール", account_path(id: current_member.id) %></br>
+	  <%= link_to "▶貸出中一覧", member_rentals_path(member_id: current_member.id) %></br>
+	  <%= link_to "▶予約中一覧", member_reservations_path(member_id: current_member.id) %></br>
+          <%= link_to "▶貸出履歴" , history_index_member_rentals_path(member_id: current_member.id)%></br>
 	<% end %>	
-	<%= link_to "ログアウト", :session,
+	<%= link_to "　ログアウト", :session,
       method: :delete, data: { confirm: "ログアウトしますか？" } %>
   </p>
 <% else %>

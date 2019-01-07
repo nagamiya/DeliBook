@@ -1,18 +1,16 @@
-<h2>ログイン</h2>
+<h3 id = "login">LOGIN FORM</h3>
 <% if flash.alert %><p class="alert"><%= flash.alert %></p><% end %>
 <%= form_tag :session do %>
 <table id="login_form">
 <tr>
-  <td style="text-align: right">ユーザID：</td>
-  <td><%= text_field_tag "user_id", "", style: "width: 120px" %></td>
+  <td><%= text_field_tag "user_id", "", placeholder: "UserId", style: "width: 100px" %></td>
 </tr>
 <tr>
-  <td style="text-align: right">パスワード：</td>
-  <td><%= password_field_tag "password", "", style: "width: 120px" %></td>
+  <td><%= password_field_tag "password", "", placeholder: "PassWord", style: "width: 100px" %></td>
 </tr>
 <tr>
   <td colspan="2" style="text-align: center">
-  <%= submit_tag "ログイン" %></td>
+  <%= button_tag "LOGIN", class: "submit_button" %></td>
 </tr>
 </table>
 <% end %>

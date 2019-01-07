@@ -11,20 +11,16 @@
   <div id="header">
     <%= render "shared/header" %>
   </div>
-
   <div id="search">
     <%= render "shared/search" %>
   </div>
-
   <div id="sidebar">
     <%= render "shared/sidebar" %>
   </div>
-
   <div id="content">
     <% if flash.notice %>
       <p class="notice"><%= flash.notice %></p>
     <% end %>
-
   <div id="footerr">
     <%= render "shared/footer" %>
   </div>
@@ -32,8 +28,5 @@
 
     <%= yield %>
   </div>
-
-
-
 </body>
 </html>

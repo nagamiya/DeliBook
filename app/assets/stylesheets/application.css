@@ -52,6 +52,22 @@ a:hover {
   color: rgba(256, 256, 256, 0.8);
   text-decoration: underline;
 }
+#book_add {
+  color: #ff0066;
+  background-color: rgba(51, 0, 0, 0.7);
+  text-align: center;
+  display: block; 
+  font-weight: 500;
+  font-size: 100%;
+  padding: 20px 35px;
+  margin-left: 10px; 
+  border-radius: 10px;
+  border: none;
+}
+#book_add:hover {
+  color: #330000;
+  background-color: rgba(256, 256, 256, 0.5); 
+}
 /* ---------------- */
 /* table member_form */
 .member_form {
@@ -91,6 +107,7 @@ a:hover {
 }
 h3{
   margin: 0px;
+  width: 400px;
 }
 h3:first-letter {
   color: #ff0066;

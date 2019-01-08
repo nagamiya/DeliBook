@@ -3,6 +3,7 @@ class ReservationsController < ApplicationController
     if params[:member_id]
         @member = Member.find(params[:member_id])
         @reservations = @member.reservations.where(is_processed: false)
+	.paginate(page: params[:page], per_page: 5)
     end
   end
 

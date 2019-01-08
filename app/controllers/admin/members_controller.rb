@@ -1,7 +1,7 @@
 class Admin::MembersController < Admin::Base
 
   def index
-    @members = Member.order("id")
+    @members = Member.order("id").paginate(page: params[:page], per_page: 5)
   end
 
   def show

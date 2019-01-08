@@ -22,7 +22,7 @@ Rails.application.routes.draw do
             collection { get "search" }
 	  end
 	  resources :rentals do
-            collection { get "search", "history_index", "app_index" }
+            collection { get "rental_search", "history_search", "app_search", "history_index", "app_index" }
             collection { post "create_fromreservation"}
             member { get "bookreturn", "rental_do" }
 	  end

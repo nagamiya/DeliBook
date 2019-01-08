@@ -8,10 +8,39 @@ div#sidebar {
   color: #330000;
   background-color: #996633;
   float: right;
-  height: 600px;  width: 185px;
+  height: 500px; width: 185px;
 }
 #membername {
   padding-left: 10px;
+}
+#newmember {
+  color: #ff0066;
+  background-color: rgba(51, 0, 0, 0.7);
+  width: 165px;
+  text-align: center;
+  display: block; 
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+  padding: 2px 0px;
+  margin: 0px 10px;
+  font-size: 100%;
+}
+#newmember:hover {
+  color: #330000;
+  background-color: rgba(256, 256, 256, 0.5); 
+}
+/* -------------- */
+/* ----login----- */
+#login_form {
+  background-color: rgba(256, 0, 102, 0.44);
+  padding: 10px 25px;
+  margin: 10px;
+  
+}
+#login {
+  padding-left: 10px;
+  margin: 10px 0px;
 }
 /* -------------- */
 /* ----search---- */
@@ -26,19 +55,6 @@ div#search {
   margin-left: 10px; 
 }
 /* -------------- */
-/* ----login----- */
-#login_form {
-  background-color: rgba(256, 0, 102, 0.44);
-  padding: 10px 25px;
-  margin: 10px;
-  
-}
-#login {
-  padding-left: 10px;
-  margin: 10px 0px;
-}
-
-/* -------------- */
 /* ----header---- */
 div#header {
   color: #330000;
@@ -51,6 +67,12 @@ h1{
 }
 h1:first-letter {
   color: #ff0066;
+  font-size: 125%;
+}
+/* -------------- */
+/* ----footer---- */
+div#footer {  
+  bottom: 0px;
 }
 /* -------------- */
 /* --submitbutton-- */
@@ -59,8 +81,9 @@ h1:first-letter {
   background-color: rgba(51, 0, 0, 0.7);
   text-align: center;
   display: block; 
-  font-weight: 800;
-  padding: 5px 35px;
+  font-weight: 500;
+  font-size: 100%;
+  padding: 5px 30px;
   margin: 5px 0px;
   border-radius: 10px;
   border: none;
@@ -68,9 +91,25 @@ h1:first-letter {
 .submit_button:hover {
   color: #330000;
   background-color: rgba(256, 256, 256, 0.5); 
-  
+}
+.submit_button2 {
+  color: #ff0066;
+  background-color: rgb(51, 0, 0);
+  text-align: center;
+  display: block; 
+  font-weight: 500;
+  font-size: 100%;
+  padding: 5px 30px;
+  margin: 5px 0px;
+  border-radius: 10px;
+  border: none;
+}
+.submit_button2:hover {
+  color: #330000;
+  background-color: rgba(256, 0, 103, 0.8); 
 }
 /* ---------------- */
+/* ----- link ----- */
 a {
   color: #330000;
   padding-left: 10px;
@@ -80,8 +119,35 @@ a:hover {
   color: rgba(256, 256, 256, 0.8);
   text-decoration: underline;
 }
-
-
+a.a2 {
+  color: rgba(256, 0, 103, 0.8); 
+}
+a.a2:hover {
+  color: #330000
+} 
+/* ---------------- */
+/* -- member_form --*/
+.member_form {
+  margin 10px;
+}
+.member_form td{
+  padding: 3px 10px;
+}
+.member_form th {
+  text-align: left;
+}
+.admin_chck {
+  padding: 10px;
+}
+/* ---------------- */
+/* ---------------- */
+h3{
+  margin: 0px;
+}
+h3:first-letter {
+  color: #ff0066;
+}
+/* ---------------- */
 
 
 

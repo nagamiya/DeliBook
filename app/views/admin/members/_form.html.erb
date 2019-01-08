@@ -1,7 +1,7 @@
-<table class="a">
+<table class="member_form">
   <tr>
     <th><%= form.label :user_id %></th>
-    <td><%= form.text_field :user_id, size: 8 %></td>
+    <td><%= form.text_field :user_id  %></td>
   </tr>
   <tr>
     <th><%= form.label :name %></th>
@@ -19,11 +19,11 @@
     <th><%= form.label :mail_address %></th>
     <td><%= form.text_field :mail_address %></td>
   </tr>
-  <td>
-    <%= form.check_box :is_admin,
-            disabled: !current_member.is_admin? %>
-    <%= form.label :is_admin, "管理者" %>
-  </td>
+  <tr>
+    <th></th>
+    <td><%= form.check_box :is_admin, disabled: !current_member.is_admin? %>
+    <%= form.label :is_admin, "管理者" %></td>
+  </tr>
   <tr>
     <th><%= form.label :defpassword %></th>
     <td><%= form.password_field :defpassword %></td>
@@ -33,7 +33,6 @@
     <td><%= form.password_field :password_confirmation %></td>
   </tr>
 </table>
-
 <% unless @member.new_record? %>
 <p>パスワードを変更しないときは、パスワード入力欄を空にしてください。</p>
 <% end %>

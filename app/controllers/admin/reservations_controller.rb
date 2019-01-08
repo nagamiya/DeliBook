@@ -1,6 +1,7 @@
 class Admin::ReservationsController < Admin::Base
   def index
     @reservations = Reservation.order("id").where(is_processed: false)
+	.paginate(page: params[:page], per_page: 5)
   end
 
   def create

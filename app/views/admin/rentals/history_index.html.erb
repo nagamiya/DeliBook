@@ -1,17 +1,18 @@
-<h2>貸出履歴一覧画面--AAdmin/RentalControllerのhistory_index</h2>
+<h3>貸出履歴一覧</h3>
 
-<%= form_tag :search_admin_rentals, method: :get do %>
-  <p><%= text_field_tag "q", params[:q] %>
-  <%= submit_tag "検索" %></p>
+<%= form_tag :history_search_admin_rentals, method: :get do %>
+  <table>
+  <tr>
+    <th><%= text_field_tag "q", params[:q] %></th>
+    <th><%= button_tag "検索", class: "submit_button2" %></th>
+  </tr>
+  </table>
 <% end %>
-
+<% count = 0 %>
 <% if @rentals.present? %>
-  <% count = 0 %>
-  <% @rentals.each do |rental| %>
-    <% count = count + 1 %>
-    <table>
+  <% count = count + 1 %>
+  <table>
     <tr>
-      <th>No.</th>
       <th>貸出ID</th>
       <th>タイトル</th>
       <th>本ID</th>
@@ -20,22 +21,23 @@
       <th>配達</th>
       <th>返却日</th>
     </tr>
-    <tr>
-      <td><%= count %></td>
-      <td><%= rental.id %></td>
-      <td><%= link_to rental.book.name, admin_book_path(rental.book) %></td>
-      <td><%= rental.book_id %></td>
-      <td><%= defzaiko(rental.book) %></td>
-      <td><%= rental.member_id %></td>
-      <% if rental.is_delivered %>
-        <td>済</td>
-      <% else %>
-        <td>未</td>
-      <% end %>
-      <td><%= rental.return_date %></td>
-    </tr>
-    </table>
-  <% end %>
+    <% @rentals.each do |rental| %>
+      <tr>
+        <td>[ <%= rental.id %> ]</td>
+        <td><%= link_to rental.book.name, admin_book_path(rental.book), class: "a2" %></td>
+        <td><%= rental.book_id %></td>
+        <td><%= defzaiko(rental.book) %></td>
+        <td><%= rental.member_id %></td>
+        <% if rental.is_delivered %>
+          <td>済</td>
+        <% else %>
+          <td>未</td>
+        <% end %>
+        <td><%= rental.return_date %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= will_paginate @rentals %>
 <% else %>
   <p>貸出はありません</p>
 <% end %>

@@ -1,6 +1,6 @@
 class Admin::BooksController < Admin::Base
 	def index
-	  @books = Book.order("id")
+	  @books = Book.order("id").paginate(page: params[:page], per_page: 5)
 	end
 
 	def show

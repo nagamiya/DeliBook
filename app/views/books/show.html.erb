@@ -1,5 +1,3 @@
-<h2>本の詳細画面--booksControllerのshow</h2>
-
 <h3><%= @book.name %></h3>
 <table class="book_show">
   <tr>
@@ -29,14 +27,11 @@
 </table>
 <% if current_member %>
   <% if @zaiko > 0 %>
-    <%= link_to "貸出申請をする", member_rentals_path(current_member, book_id: @book.id), method: :post %>
+    <%= link_to "貸出申請をする", member_rentals_path(current_member, book_id: @book.id), method: :post, class: "a2" %>
   <% else %>
-    <%= link_to "予約申請をする", member_reservations_path(current_member, book_id: @book.id), method: :post %>
+    <%= link_to "予約申請をする", member_reservations_path(current_member, book_id: @book.id), method: :post, class: "a2"  %>
   <% end %>
-  <%= link_to "検索結果一覧に戻る", :back %>
+  <%= link_to "検索結果一覧に戻る", :back, class: "a2"  %>
 <% end %>
 
-<p>所蔵数：<%= @book.stock_num %></p>
-<p>貸出数：<%= @rental_num %></p> 
-<p>予約数：<%= @reservation_num %></p>
-<p>在庫数：<%= @zaiko %></p>
+<p>貸出数：<%= @rental_num %>｜予約数：<%= @reservation_num %>｜在庫数：<%= @zaiko %>｜所蔵数：<%= @book.stock_num %></p>

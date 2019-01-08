@@ -40,6 +40,7 @@ class Book < ActiveRecord::Base
 		#puts query.id
 		rel = Book.joins(:reservations)
 		rel = rel.where("Reservations.book_id = ? " , query.id)
+		rel = rel.where("Reservations.is_processed = ? ", false)
 		rel = rel.count
 	     end
 	    rel 

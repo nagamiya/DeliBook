@@ -1,15 +1,16 @@
-<h2>予約中一覧画面--AAdmin/ReservationControllerのindex</h2>
+<h3>予約中一覧</h3>
 
 <%= form_tag :search_admin_reservations, method: :get do %>
-  <p><%= text_field_tag "q", params[:q] %>
-  <%= submit_tag "検索" %></p>
+  <table>
+  <tr>
+    <th><%= text_field_tag "q", params[:q] %></th>
+    <th><%= button_tag "検索", class: "submit_button2" %></th>
+  </tr>
+  </table>
 <% end %>
 
 <% if @reservations.present? %>
-  <% count = 0 %>
-  <% @reservations.each do |reservation| %>
-    <% count = count + 1 %>
-    <table>
+  <table>
     <tr>
       <th>No.</th>
       <th>予約ID</th>
@@ -19,24 +20,24 @@
       <th>会員ID</th>
       <th>編集</th>
     </tr>
-    <tr>
-      <td><%= count %></td>
-      <td><%= reservation.id %></td>
-      <td><%= link_to reservation.book.name, admin_book_path(reservation.book) %></td>
-      <td><%= reservation.book_id %></td>
-      <td><%= defzaiko(reservation.book) %></td>
-      <td><%= reservation.member_id %></td>
-      <td><%= link_to "取消",  admin_reservation_path(reservation.id,reservation), method: :delete,
-	data: { confirm: "本当に予約を取り消しても良いですか？"} %>：
-          <% if defzaiko(reservation.book) > 0 %>
-	    <%= link_to "貸出申請に進む", 
-	   create_fromreservation_admin_rentals_path(id: reservation, book: reservation.book_id, member: reservation.member_id),
-	   method: :post %>
-	  <% end %>
-      </td>
-    </tr>
-    </table>
-  <% end %>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <td><%= reservation.id %></td>
+        <td><%= link_to reservation.book.name, admin_book_path(reservation.book), class: "a2" %></td>
+        <td><%= reservation.book_id %></td>
+        <td><%= defzaiko(reservation.book) %></td>
+        <td><%= reservation.member_id %></td>
+        <td><%= link_to "取消", admin_reservation_path(reservation.id,reservation), method: :delete,
+  	  data: { confirm: "本当に予約を取り消しても良いですか？"}, class: "a2" %>：
+            <% if defzaiko(reservation.book) > 0 %>
+	      <%= link_to "貸出申請に進む", 
+	       create_fromreservation_admin_rentals_path(id: reservation, book: reservation.book_id, member: reservation.member_id),
+	       method: :post, class: "a2" %>
+	    <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 <% else %>
-  <p>貸出はありません</p>
+  <p>予約はありません</p>
 <% end %>

@@ -3,6 +3,7 @@ class RentalsController < ApplicationController
     if params[:member_id]
         @member = Member.find(params[:member_id])
         @rentals = @member.rentals.where(return_date: nil)#.where(is_delivered: true)
+	.paginate(page: params[:page], per_page: 5)
     end
   end
 
@@ -19,6 +20,7 @@ class RentalsController < ApplicationController
   def history_index #貸出履歴
     member_id = params[:member_id]
     @rentals = Rental.order("id").where.not(return_date: nil).where(is_delivered: true).where(member_id: member_id)
+	.paginate(page: params[:page], per_page: 5)
   end
 
   def defzaiko(rentalbook)

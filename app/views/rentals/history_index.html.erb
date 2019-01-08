@@ -2,7 +2,6 @@
 <h3>貸出履歴一覧</h3>
 
 <% if @rentals.present? %>
-  <% count = 0 %>
   <% @rentals.each do |rental| %>
     <% count = count + 1 %>
     <table>
@@ -29,8 +28,9 @@
       <td><%= rental.return_date %></td>
     </tr>
     </table>
+    <%= will_paginate @rentals %>
   <% end %>
 <% else %>
-  <p>貸出はありません</p>
+  <p>貸出履歴はありません</p>
 <% end %>
 </div>

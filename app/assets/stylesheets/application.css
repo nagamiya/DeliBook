@@ -78,6 +78,17 @@ a:hover {
   text-align: left;
 }
 /* ---------------- */
+.book_show {
+  margin 10px;
+}
+.book_show td{
+  padding: 5px;
+}
+.book_show th {
+  text-align: left;
+  padding-top: 3px;
+  padding-left: 20px;
+}
 h3{
   margin: 0px;
 }
@@ -86,7 +97,7 @@ h3:first-letter {
 }
 /* ---------------- */
 p.book_show {
-  margin: 10px 50px;
+  margin: 10px 20px;
 }
 
 

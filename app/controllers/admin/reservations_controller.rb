@@ -25,7 +25,8 @@ class Admin::ReservationsController < Admin::Base
   end
 
   def search
-    @reservations = Reservation.search(params[:q])
+    @reservations = Reservation.search(params[:q]).where(is_processed: false)
+	.paginate(page: params[:page], per_page: 5)
     render "index"
   end
 

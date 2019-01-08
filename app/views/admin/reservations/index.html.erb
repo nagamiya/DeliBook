@@ -13,7 +13,6 @@
 <% if @reservations.present? %>
   <table>
     <tr>
-      <th>No.</th>
       <th>予約ID</th>
       <th>タイトル</th>
       <th>本ID</th>
@@ -29,9 +28,9 @@
         <td><%= defzaiko(reservation.book) %></td>
         <td><%= reservation.member_id %></td>
         <td><%= link_to "取消", admin_reservation_path(reservation.id,reservation), method: :delete,
-  	  data: { confirm: "本当に予約を取り消しても良いですか？"}, class: "a2" %>：
+  	  data: { confirm: "本当に予約を取り消しても良いですか？"}, class: "a2" %>
             <% if defzaiko(reservation.book) > 0 %>
-	      <%= link_to "貸出申請に進む", 
+	      ：<%= link_to "貸出申請に進む", 
 	       create_fromreservation_admin_rentals_path(id: reservation, book: reservation.book_id, member: reservation.member_id),
 	       method: :post, class: "a2" %>
 	    <% end %>
@@ -39,6 +38,7 @@
       </tr>
     <% end %>
   </table>
+  <%= will_paginate @reservations %>
 <% else %>
   <p>予約はありません</p>
 <% end %>

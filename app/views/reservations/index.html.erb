@@ -22,6 +22,7 @@
 	data: { confirm: "予約を取り消しても良いですか？"}, class: "a2"  %></td>
     </tr>
     </table>
+    <%= will_paginate @reservations %>
   <% end %>
 <% else %>
   <p>予約はありません</p>

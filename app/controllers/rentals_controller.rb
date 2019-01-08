@@ -7,6 +7,12 @@ class RentalsController < ApplicationController
     end
   end
 
+  def history_index #貸出履歴
+    member_id = params[:member_id]
+    @rentals = Rental.order("id").where.not(return_date: nil).where(is_delivered: true).where(member_id: member_id)
+	.paginate(page: params[:page], per_page: 5)
+  end
+
   def create
 	puts "!!!!!!!!!!!!!!create!!!!!!!!!!"
 	@rental = Rental.new(book_id: params[:book_id], member_id: current_member.id, rent_date: Date.today, is_delivered: false)
@@ -15,12 +21,6 @@ class RentalsController < ApplicationController
 	else
 	  render controller: "book", action: "show", id: params[:book_id], notice: "貸出申請に失敗しました"
 	end
-  end
-
-  def history_index #貸出履歴
-    member_id = params[:member_id]
-    @rentals = Rental.order("id").where.not(return_date: nil).where(is_delivered: true).where(member_id: member_id)
-	.paginate(page: params[:page], per_page: 5)
   end
 
   def defzaiko(rentalbook)

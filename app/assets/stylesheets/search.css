@@ -1,0 +1,11 @@
+/* ----search---- */
+div#search {
+  color: #330000;
+  background-color: #996633;
+  height: 80px;
+  padding: 0px 50px;
+}
+#search_button {
+  padding: 20px 35px;
+  margin-left: 10px; 
+}

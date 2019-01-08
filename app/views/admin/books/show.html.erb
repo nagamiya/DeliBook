@@ -1,3 +1,4 @@
+<div class = "content" >
 <h3><%= @book.name %></h3>
 <table class="book_show">
   <tr>
@@ -25,6 +26,14 @@
     <td><%= @book.summary %></td>
   </tr>
 </table>
+
+<p class = "book_show">貸出数：<%= @rental_num %>｜予約数：<%= @reservation_num %>｜
+  在庫数：<%= @zaiko %>｜所蔵数：<%= @book.stock_num %></p>
+
+<%= link_to "検索結果一覧に戻る", :search_admin_books, class: "a2"  %>
+<%= link_to "編集", edit_admin_book_path, class: "a2" %>
+  <%= link_to "削除", admin_book_path, method: :delete, data: { confirm: "本の取扱いをやめますか？"}, class: "a2" %>
+
 <% if @zaiko > 0 %>
   <%= form_tag :admin_rentals, method: :post do %>
     <table>
@@ -37,13 +46,13 @@
   <% end %>
 <% else %>
   <%= form_tag :admin_reservations, method: :post do %>
-    <p><%= text_field_tag "member", params[:member] %>
-    <%= hidden_field_tag "book", @book.id %>
-    <%= button_tag "予約申請代替をする", class: "submit_button2" %></p>
+    <table>
+    <tr>
+      <th>会員ID<%= text_field_tag "member", params[:member] %>
+         <%= hidden_field_tag "book", @book.id %>
+      <th><%= button_tag "予約申請代替をする", class: "submit_button2" %></th>
+    </tr>
+    </table>
   <% end %>
 <% end %>
-<%= link_to "検索結果一覧に戻る", :search_admin_books, class: "a2"  %>
-<%= link_to "編集", edit_admin_book_path, class: "a2" %>
-  <%= link_to "削除", admin_book_path, method: :delete, data: { confirm: "本の取扱いをやめますか？"}, class: "a2" %>
-
-<p>貸出数：<%= @rental_num %>｜予約数：<%= @reservation_num %>｜在庫数：<%= @zaiko %>｜所蔵数：<%= @book.stock_num %></p>
+</div>

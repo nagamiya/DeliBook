@@ -1,80 +1,13 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
 body {
   color: #330000;
   margin: 0;
   padding: 5;
 }
-/* ---sidebar--- */
-div#sidebar {
-  color: #330000;
-  background-color: #996633;
-  float: right;
-  height: 500px; width: 185px;
-}
-#membername {
-  padding-left: 10px;
-}
-#newmember {
-  color: #ff0066;
-  background-color: rgba(51, 0, 0, 0.7);
-  width: 165px;
-  text-align: center;
-  display: block; 
-  font-weight: 500;
-  border-radius: 10px;
-  border: none;
-  padding: 2px 0px;
-  margin: 0px 10px;
-  font-size: 100%;
-}
-#newmember:hover {
-  color: #330000;
-  background-color: rgba(256, 256, 256, 0.5); 
-}
-/* -------------- */
-/* ----login----- */
-#login_form {
-  background-color: rgba(256, 0, 102, 0.44);
-  padding: 10px 25px;
-  margin: 10px;
-  
-}
-#login {
-  padding-left: 10px;
-  margin: 10px 0px;
-}
-/* -------------- */
-/* ----search---- */
-div#search {
-  color: #330000;
-  background-color: #996633;
-  height: 80px;
- 
-}
-#search_button {
-  padding: 20px 35px;
-  margin-left: 10px; 
-}
-/* -------------- */
-/* ----header---- */
-div#header {
-  color: #330000;
-  background-color: #996633;
-  height: 50px;
-  padding: 1%;	
-}
-h1{
-  margin: 0px;
-}
-h1:first-letter {
-  color: #ff0066;
-  font-size: 125%;
-}
-/* -------------- */
-/* ----footer---- */
-div#footer {  
-  bottom: 0px;
-}
-/* -------------- */
+
 /* --submitbutton-- */
 .submit_button {
   color: #ff0066;
@@ -119,14 +52,8 @@ a:hover {
   color: rgba(256, 256, 256, 0.8);
   text-decoration: underline;
 }
-a.a2 {
-  color: rgba(256, 0, 103, 0.8); 
-}
-a.a2:hover {
-  color: #330000
-} 
 /* ---------------- */
-/* -- member_form --*/
+/* table member_form */
 .member_form {
   margin 10px;
 }
@@ -140,6 +67,16 @@ a.a2:hover {
   padding: 10px;
 }
 /* ---------------- */
+/* table member_body */
+.members_body {
+  margin 10px;
+}
+.members_body td{
+  padding: 3px 10px;
+}
+.members_body th {
+  text-align: left;
+}
 /* ---------------- */
 h3{
   margin: 0px;
@@ -148,6 +85,8 @@ h3:first-letter {
   color: #ff0066;
 }
 /* ---------------- */
-
+p.book_show {
+  margin: 10px 50px;
+}
 
 

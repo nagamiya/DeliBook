@@ -1,0 +1,28 @@
+/* ---sidebar--- */
+div#sidebar {
+  color: #330000;
+  background-color: #996633;
+  float: right;
+  height: 500px; width: 185px;
+}
+#membername {
+  padding-left: 10px;
+}
+#newmember {
+  color: #ff0066;
+  background-color: rgba(51, 0, 0, 0.7);
+  width: 165px;
+  text-align: center;
+  display: block; 
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+  padding: 2px 0px;
+  margin: 0px 10px;
+  font-size: 100%;
+}
+#newmember:hover {
+  color: #330000;
+  background-color: rgba(256, 256, 256, 0.5); 
+}
+/* -------------- */

@@ -1,0 +1,10 @@
+div.content {
+  margin: 10px 50px;
+}
+a.a2 {
+  color: rgba(256, 0, 103, 0.8); 
+}
+a.a2:hover {
+  color: #330000
+} 
+

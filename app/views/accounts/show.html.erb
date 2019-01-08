@@ -1,4 +1,6 @@
+<div class = "content">
 <h3>プロフィール画面</h3>
 <%= render "members/body" %>
 <%= link_to "編集", [:edit, :account], class: "a2" %>
 <%= link_to "退会する", account_path, method: :delete, data: { confirm: "本当に退会しても良いですか？"}, class: "a2" %>
+</div>

@@ -1,0 +1,11 @@
+/* ----login----- */
+#login_form {
+  background-color: rgba(256, 0, 102, 0.44);
+  padding: 10px 25px;
+  margin: 10px;
+  
+}
+#login {
+  padding-left: 10px;
+  margin: 10px 0px;
+}

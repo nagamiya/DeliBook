@@ -1,0 +1,15 @@
+/* ----header---- */
+div#header {
+  color: #330000;
+  background-color: #996633;
+  height: 50px;
+  padding: 1%;	
+}
+h1{
+  margin: 0px;
+}
+h1:first-letter {
+  color: #ff0066;
+  font-size: 125%;
+}
+/* -------------- */

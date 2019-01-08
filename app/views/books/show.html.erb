@@ -1,3 +1,4 @@
+<div class = "content">
 <h3><%= @book.name %></h3>
 <table class="book_show">
   <tr>
@@ -34,4 +35,6 @@
   <%= link_to "検索結果一覧に戻る", :back, class: "a2"  %>
 <% end %>
 
-<p>貸出数：<%= @rental_num %>｜予約数：<%= @reservation_num %>｜在庫数：<%= @zaiko %>｜所蔵数：<%= @book.stock_num %></p>
+<p>貸出数：<%= @rental_num %>｜予約数：<%= @reservation_num %>｜
+  在庫数：<%= @zaiko %>｜所蔵数：<%= @book.stock_num %></p>
+</div>

@@ -4,6 +4,7 @@ class Member < ActiveRecord::Base
 
   #validates :password, confirmation: { allow_blank: true }
 
+
   attr_accessor :hashed_password, :password_confirmation
 
   def defpassword=(val)

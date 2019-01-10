@@ -18,7 +18,7 @@ class MembersController < ApplicationController
 
   private
   def member_params
-    attrs = [:user_id, :name, :place, :tel, :mail_address,:defpassword, :password_confirmation]
+    attrs = [:user_id, :name, :place, :tel, :mail_address, :password, :password_confirmation]
     params.require(:member).permit(attrs)
   end
 

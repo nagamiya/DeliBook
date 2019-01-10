@@ -20,7 +20,7 @@ class Admin::MembersController < Admin::Base
     if @member.save
       redirect_to [:admin, @member], notice: "会員登録が完了しました"
     else
-      render "edit"
+      render "new"
     end
   end
 
@@ -58,13 +58,13 @@ class Admin::MembersController < Admin::Base
   #管理者によるアカウント追加用
   private
   def member_params2
-    attrs = [:user_id, :name, :place, :tel, :mail_address,:defpassword, :password_confirmation, :is_admin]
+    attrs = [:user_id, :name, :place, :tel, :mail_address,:password, :password_confirmation, :is_admin]
     params.require(:member).permit(attrs)
   end
   #管理者による会員のプロフィール情報編集用
   private
   def member_params
-    attrs = [:user_id, :name, :place, :tel, :mail_address,:defpassword, :password_confirmation]
+    attrs = [:user_id, :name, :place, :tel, :mail_address,:password, :password_confirmation]
     params.require(:member).permit(attrs)
   end
 

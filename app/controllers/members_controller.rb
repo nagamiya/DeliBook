@@ -12,7 +12,7 @@ class MembersController < ApplicationController
     if @member.save
       redirect_to controller: "top", action: "index", notice: "会員登録が完了しました"
     else
-      render "new"
+      render "edit"
     end
   end
 

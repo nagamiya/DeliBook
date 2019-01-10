@@ -20,7 +20,7 @@ class Admin::MembersController < Admin::Base
     if @member.save
       redirect_to [:admin, @member], notice: "会員登録が完了しました"
     else
-      render "new"
+      render "edit"
     end
   end
 

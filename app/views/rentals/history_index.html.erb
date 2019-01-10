@@ -3,10 +3,8 @@
 
 <% if @rentals.present? %>
   <% @rentals.each do |rental| %>
-    <% count = count + 1 %>
     <table>
     <tr>
-      <th>No.</th>
       <th>貸出ID</th>
       <th>タイトル</th>
       <th>本ID</th>
@@ -15,7 +13,6 @@
       <th>返却日</th>
     </tr>
     <tr>
-      <td><%= count %></td>
       <td><%= rental.id %></td>
       <td><%= link_to rental.book.name, book_path(rental.book), class: "a2"  %></td>
       <td><%= rental.book_id %></td>

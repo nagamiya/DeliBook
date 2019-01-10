@@ -71,7 +71,7 @@ a:hover {
 /* ---------------- */
 /* table member_form */
 .member_form {
-  margin 10px;
+  margin: 10px;
 }
 .member_form td{
   padding: 3px 10px;
@@ -105,6 +105,20 @@ a:hover {
   padding-top: 3px;
   padding-left: 20px;
 }
+/* book_form */
+.author_td {
+  width: 90px;
+}
+.book_form {
+  margin: 10px;
+}
+.book_form td{
+  padding: 3px 10px;
+}
+.book_form th {
+  text-align: left;
+}
+/* ------------- */
 h3{
   margin: 0px;
   width: 400px;

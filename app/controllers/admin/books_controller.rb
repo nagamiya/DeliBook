@@ -24,7 +24,7 @@ class Admin::BooksController < Admin::Base
    	  if @book.save
     	    redirect_to [:admin, @book], notice: "本の登録が完了しました"
     	  else
-     	    render admin/root
+     	    render "new"
 	  end
 	end
 

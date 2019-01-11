@@ -2,11 +2,11 @@
 <table class="a">
   <tr>
     <th><%= form.label :name %></th>
-    <td><%= form.text_field :name, size: 8 %></td>
+    <td><%= form.text_field :name, size: 20 %></td>
   </tr>
   <tr>
     <th><%= form.label :isbn %></th>
-    <td><%= form.text_field :isbn %></td>
+    <td><%= form.text_field :isbn, maxlength: 13, size: 20 %></td>
   </tr>
   <tr>    
     <th>Authors</th>
@@ -16,15 +16,15 @@
   </tr>
   <tr>
     <th>Publisher</th>
-    <td><%= form.collection_select :publisher_id, Publisher.all, :id, :name %>
+    <td><%= form.collection_select :publisher_id, Publisher.all, :id, :name, :include_blank => true %>
   </tr>
   <tr>
     <th>Genre</th>
-    <td><%= form.collection_select :genre_id, Genre.all, :id, :name %>
+    <td><%= form.collection_select :genre_id, Genre.all, :id, :name, :include_blank => true %>
   </tr>
   <tr>
     <th><%= form.label :summary %></th>
-    <td><%= form.text_field :summary %></td>
+    <td><%= form.text_area :summary %></td>
   </tr>
   <tr>
     <th><%= form.label :stock_num %></th>

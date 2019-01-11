@@ -6,6 +6,18 @@ class Book < ActiveRecord::Base
         has_many :book_authors, dependent: :destroy
         has_many :authors, through: :book_authors
 
+	validates :isbn, presence: true,
+	  length: { is: 13 },
+	  uniqueness: true
+	validates :book_authors, 
+	  length: { minimum: 1,
+		    message: "を１つ以上選択してください" }
+	validates :publisher_id, presence: true
+	validates :genre_id, presence: true
+	validates :stock_num, presence: true,
+	  numericality: { only_integer: true }
+	  
+
 	class << self
 	  def search(query)
 	     rel = order("id")

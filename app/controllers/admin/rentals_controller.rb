@@ -35,7 +35,7 @@ class Admin::RentalsController < Admin::Base
     @reservation.is_processed = true
     @rental = Rental.new(book_id: params[:book], member_id: params[:member], rent_date: Date.today, is_delivered: false)
     if @rental.save && @reservation.save
-      redirect_to controller: "renral", action: "app_index", notice: "予約申請を貸出申請に移行しました"
+      redirect_to app_index_admin_rentals_path, notice: "予約申請を貸出申請に移行しました"
     else
       render controller: "book", action: "show", id: params[:book], notice: "予約申請の貸出申請移行に失敗しました"
     end

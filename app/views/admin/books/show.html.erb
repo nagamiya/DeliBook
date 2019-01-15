@@ -30,7 +30,7 @@
 <p class = "book_show">貸出数：<%= @rental_num %>｜予約数：<%= @reservation_num %>｜
   在庫数：<%= @zaiko %>｜所蔵数：<%= @book.stock_num %></p>
 
-<%= link_to "検索結果一覧に戻る", :search_admin_books, class: "a2"  %>
+<%= link_to "検索結果一覧に戻る", search_admin_books_path, class: "a2"  %>
 <%= link_to "編集", edit_admin_book_path, class: "a2" %>
   <%= link_to "削除", admin_book_path, method: :delete, data: { confirm: "本の取扱いをやめますか？"}, class: "a2" %>
 

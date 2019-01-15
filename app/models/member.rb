@@ -17,7 +17,7 @@ class Member < ActiveRecord::Base
   #validates :mail_address, presence: true,#:check_email
    # format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
    # uniqueness: { case_sensitive: false }
-  validates :password, presence: true,
+  validates :password,  presence: { on: :create },
     format: { with: /\A[A-Za-z0-9]+\z/, allow_blank: true },
     length: { minimum: 6, maximum: 8 },
     confirmation: { allow_blank: true }

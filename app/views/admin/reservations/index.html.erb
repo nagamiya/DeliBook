@@ -2,7 +2,7 @@
 <h3>予約中一覧</h3>
 
 <%= form_tag :search_admin_reservations, method: :get do %>
-  <table>
+  <table class = "table">
   <tr>
     <th><%= text_field_tag "q", params[:q] %></th>
     <th><%= button_tag "検索", class: "submit_button2" %></th>

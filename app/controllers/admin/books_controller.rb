@@ -20,7 +20,8 @@ class Admin::BooksController < Admin::Base
 
 	def create
    	  @book = Book.new(book_params)
-   	 # puts "!!!!!!!!!!!!!admin/books/create"
+   
+   	  puts "!!!!!!!!!!!!!admin/books/create"
    	  if @book.save
     	    redirect_to [:admin, @book], notice: "本の登録が完了しました"
     	  else
@@ -56,7 +57,6 @@ class Admin::BooksController < Admin::Base
 	  @book_publisher = params[:book_publisher]
 	  @book_genre = params[:book_genre]
 	  @book_info = [@book_title, @book_author, @book_publisher, @book_genre]
-
 	  @books = Book.search(@book_info).paginate(page: params[:page], per_page: 5)
 	  render "index"
 	end

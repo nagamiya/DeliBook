@@ -94,9 +94,6 @@ a:hover {
   text-align: left;
 }
 /* ---------------- */
-.book_show {
-  margin 10px;
-}
 .book_show td{
   padding: 5px;
 }
@@ -104,6 +101,10 @@ a:hover {
   text-align: left;
   padding-top: 3px;
   padding-left: 20px;
+}
+
+.table th{
+  padding: 20px; 
 }
 h3{
   margin: 0px;

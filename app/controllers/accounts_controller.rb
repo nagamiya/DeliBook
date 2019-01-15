@@ -13,23 +13,23 @@ class AccountsController < ApplicationController
     @member = current_member
     @member.assign_attributes(account_params)
     if @member.save
-      redirect_to action: "show", notice: "プロフィールを更新しました。"
+      flash[:notice] = "プロフィールを更新しました。"
+      redirect_to action: "show"
     else
       render "edit"
     end
   end
 
   def destroy
-    puts "fooooooooooooooooo"
     @rentals = Rental.order("id").where(member_id: current_member.id).where(return_date: nil)
     if @rentals.empty?
-	puts "aaaaaaaaa"
       @member = Member.find(current_member)
       @member.destroy
-      redirect_to controller: "top", action: "index", notice: "退会しました。" 
+      flash[:notice] = "退会しました。" 
+      redirect_to controller: "top", action: "index"
     else
-	puts "bbbbbbbbb"
-      redirect_to action: "show", notice: "退会に失敗しました。貸出処理が終了していません。"
+      flash[:notice] = "退会に失敗しました。貸出処理が終了していません。"
+      redirect_to action: "show"
     end
   end
 

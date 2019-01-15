@@ -1,3 +1,6 @@
 <div class = "content">
 <h2>TopController-index</h2>
 <p>きっとここには新着本とかのトピックスがくるってしんじてるよ</p>
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>

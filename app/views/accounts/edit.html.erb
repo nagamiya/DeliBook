@@ -1,6 +1,10 @@
 <div class = "content">
 <h3>プロフィール編集</h3>
 
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
 <%= form_for @member , as: "account", url: :account do |form| %>
 <%= render "members/form", form: form %>
 <p><%= button_tag "Update", class: "submit_button2" %></p>

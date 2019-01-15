@@ -10,7 +10,8 @@ class MembersController < ApplicationController
     @member = Member.new(member_params)
     #@member.assign_attributes(member_params)
     if @member.save
-      redirect_to controller: "top", action: "index", notice: "会員登録が完了しました"
+      flash[:notice] = "会員登録が完了しました"
+      redirect_to controller: "top", action: "index"
     else
       render "new"
     end

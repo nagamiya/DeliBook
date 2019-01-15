@@ -1,5 +1,10 @@
 <div class = "content">
 <h3><%= @book.name %></h3>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
 <table class="book_show">
   <tr>
     <th width="150">ISBN</th>

@@ -14,12 +14,13 @@ class RentalsController < ApplicationController
   end
 
   def create
-	puts "!!!!!!!!!!!!!!create!!!!!!!!!!"
 	@rental = Rental.new(book_id: params[:book_id], member_id: current_member.id, rent_date: Date.today, is_delivered: false)
 	if @rental.save
-	  redirect_to controller: "books", action: "show", id: params[:book_id], notice: "貸出申請が完了しました"
+	  flash[:notice] = "貸出申請が完了しました"
+	  redirect_to controller: "books", action: "show", id: params[:book_id]
 	else
-	  render controller: "book", action: "show", id: params[:book_id], notice: "貸出申請に失敗しました"
+	  flash[:notice] = "貸出申請に失敗しました"
+	  render controller: "book", action: "show", id: params[:book_id]
 	end
   end
 

@@ -10,16 +10,19 @@ class ReservationsController < ApplicationController
   def create
 	@reservation = Reservation.new(book_id: params[:book_id], member_id: current_member.id, app_date: Date.today, is_processed: false)
 	if @reservation.save
-	  redirect_to controller: "books", action: "show", id: params[:book_id], notice: "貸出予約申請が完了しました"
+	  flash[:notice] = "貸出予約申請が完了しました"
+	  redirect_to controller: "books", action: "show", id: params[:book_id]
 	else
-	  render controller: "books", action: "show", id: params[:book_id], notice: "貸出予約申請に失敗しました"
+	  flash[:notice] = "貸出予約申請に失敗しました"
+	  render controller: "books", action: "show", id: params[:book_id]
 	end
   end
 
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy 
-    redirect_to action: "index", notice: "予約を取り消しました" 
+    flash[:notice] = "予約を取り消しました" 
+    redirect_to action: "index"
   end
 
   def defzaiko(rs)

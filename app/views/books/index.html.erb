@@ -1,5 +1,10 @@
 <div class = "content">
 <h3>検索結果</h3>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
 <table class="list">
   <tr>
     <th>No.</th>

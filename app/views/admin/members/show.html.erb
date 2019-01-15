@@ -1,5 +1,8 @@
 <div class = "content" >
 <h3>プロフィール</h3>
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
 <%= render "body" %>
 <%= link_to "編集", edit_admin_member_path, class: "a2" %>
 <%= link_to "退会させる", admin_member_path, method: :delete, data: { confirm: "本当に退会させても良いですか？"}, class: "a2" %>

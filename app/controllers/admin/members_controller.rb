@@ -14,11 +14,10 @@ class Admin::MembersController < Admin::Base
 
   def create
     @member = Member.new(member_params2)
-    #@member.assign_attributes(member_params)
     puts "!!!!!!!!!!!!!admin/members/create"
-	puts @member.is_admin
     if @member.save
-      redirect_to [:admin, @member], notice: "会員登録が完了しました"
+      flash[:notice] = "会員登録が完了しました"
+      redirect_to action: "index"
     else
       render "new"
     end
@@ -33,7 +32,8 @@ class Admin::MembersController < Admin::Base
     @member = Member.find(params[:id])
     @member.assign_attributes(member_params2)
     if @member.save
-      redirect_to [:admin, @member], notice: "会員情報を更新しました。"
+      flash[:notice] = "会員情報を更新しました。"
+      redirect_to action: "show"
     else
       render "edit"
     end
@@ -42,16 +42,19 @@ class Admin::MembersController < Admin::Base
   def destroy
     @member = Member.find(params[:id])
     @rentals = Rental.order("id").where(member_id: @member.id).where(return_date: nil)
-    if @rentals.empty?   
+ 
+    if @rentals.empty?  
       @member.destroy
-      redirect_to :admin_members, notice: "会員を削除しました。"
-    else
-      redirect_to :admin_members, notice: "会員削除に失敗しました。貸出処理が終了していません。"
+      flash[:notice] = "会員を削除しました。"
+      redirect_to action: "index"
+    else 
+      flash[:notice] = "会員削除に失敗しました。貸出処理が終了していません。"
+      redirect_to action: "show"
     end
   end
 
   def search
-    @members = Member.search(params[:q])
+    @members = Member.search(params[:q]).paginate(page: params[:page], per_page: 5)
     render "index"
   end
 

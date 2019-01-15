@@ -10,9 +10,11 @@ class Admin::ReservationsController < Admin::Base
     puts params[:book]
     @reservation = Reservation.new(book_id: params[:book], member_id: params[:member], app_date: Date.today, is_processed: false)
     if @reservation.save
-      redirect_to controller: "books", action: "show", id: params[:book], notice: "予約申請代替が完了しました"
+      flash[:notice] = "予約申請代替が完了しました"
+      redirect_to controller: "books", action: "show", id: params[:book]
     else
-      render controller: "book", action: "show", id: params[:book], notice: "予約申請代替に失敗しました"
+      flash[:notice] =  "予約申請代替に失敗しました"
+      render controller: "book", action: "show", id: params[:book]
     end
   end
 
@@ -21,7 +23,8 @@ class Admin::ReservationsController < Admin::Base
     @reservation = Reservation.find(params[:id])
     puts @reservation.id
     @reservation.destroy 
-    redirect_to action: "index", notice: "予約を取り消しました" 
+    flash[:notice] = "予約を取り消しました" 
+    redirect_to action: "index"
   end
 
   def search

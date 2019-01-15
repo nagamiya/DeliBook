@@ -23,7 +23,8 @@ class Admin::BooksController < Admin::Base
    
    	  puts "!!!!!!!!!!!!!admin/books/create"
    	  if @book.save
-    	    redirect_to [:admin, @book], notice: "本の登録が完了しました"
+	    flash[:notice] = "本の登録が完了しました"
+    	    redirect_to action: "show", id: @book.id
     	  else
      	    render "new"
 	  end
@@ -33,7 +34,8 @@ class Admin::BooksController < Admin::Base
 	  @book = Book.find(params[:id])
 	  @book.assign_attributes(book_params)
 	  if @book.save
-	    redirect_to [:admin, @book], notice: "本の詳細情報を更新しました。"
+	    flash[:notice] = "本の詳細情報を更新しました。"
+	    redirect_to action: "show"
 	  else
 	    render "edit"
 	  end
@@ -45,9 +47,11 @@ class Admin::BooksController < Admin::Base
 	  @reservations = Reservation.order("id").where(book_id: @book.id).where(is_processed: false)
 	  if @rentals.empty? and @reservations.empty?
             @book.destroy
-            redirect_to search_admin_books_path, notice: "該当する本を削除しました。"
+	    flash[:notice] =  "該当する本を削除しました。"
+            redirect_to action: "index"
 	  else
-	    redirect_to admin_book_path, notice: "削除に失敗しました。貸出・予約処理が終了していません。"
+	    flash[:notice] =  "本の貸出・予約処理が終了していません。"
+	    redirect_to action: "show"
 	  end
 	end
 

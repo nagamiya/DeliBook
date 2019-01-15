@@ -16,14 +16,12 @@ class Admin::RentalsController < Admin::Base
   end
 
   def create
-    puts "!!!!!!!!!!!!!!create(admin)!!!!!!!!!!"
-    puts params[:member]
-    puts params[:book]
     @rental = Rental.new(book_id: params[:book], member_id: params[:member], rent_date: Date.today, is_delivered: false)
     if @rental.save
-      redirect_to controller: "books", action: "show", id: params[:book], notice: "貸出申請代替が完了しました"
+      flash[:notice] = "貸出申請代替が完了しました"
+      redirect_to controller: "books", action: "show", id: params[:book]
     else
-      render controller: "book", action: "show", id: params[:book], notice: "貸出申請代替に失敗しました"
+      render "show", text: "貸出申請代替に失敗しました"
     end
   end
 
@@ -35,9 +33,11 @@ class Admin::RentalsController < Admin::Base
     @reservation.is_processed = true
     @rental = Rental.new(book_id: params[:book], member_id: params[:member], rent_date: Date.today, is_delivered: false)
     if @rental.save && @reservation.save
-      redirect_to app_index_admin_rentals_path, notice: "予約申請を貸出申請に移行しました"
+      flash[:notice] = "予約申請を貸出申請に移行しました"
+      redirect_to controller: "reservations", action: "index"
     else
-      render controller: "book", action: "show", id: params[:book], notice: "予約申請の貸出申請移行に失敗しました"
+      flash[:notice] = "予約申請の貸出申請移行に失敗しました"
+      redirect_to controller: "reservations", action: "index"
     end
   end
 
@@ -67,7 +67,8 @@ class Admin::RentalsController < Admin::Base
     @rental = Rental.find(params[:id])   
     @rental.return_date = Date.today
     if @rental.save
-      redirect_to admin_rentals_path, notice: "本の返却を受理しました。"
+      flash[:notice] = "本の返却を受理しました。"
+      redirect_to controller: "rentals", action: "index"
     else
       render "index"
     end
@@ -78,9 +79,10 @@ class Admin::RentalsController < Admin::Base
     @rental = Rental.find(params[:id])
     @rental.is_delivered = true
     if @rental.save
-      redirect_to app_index_admin_rentals_path, notice: "本の貸出を実行しました。"     
+      flash[:notice] = "本の貸出を実行しました。"     
+      redirect_to controller: "rentals", action: "app_index"
     else
-      render "index"
+      render "app_index"
     end
   end
 

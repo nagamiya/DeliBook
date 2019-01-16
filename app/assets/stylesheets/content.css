@@ -2,9 +2,14 @@ div.content {
   margin: 10px 50px;
 }
 a.a2 {
-  color: rgba(256, 0, 103, 0.8); 
+  color: #ed8d49; 
 }
 a.a2:hover {
-  color: #330000
+  color: #978d86;
 } 
+
+#booktd {
+  color: #978d86;
+
+}
 

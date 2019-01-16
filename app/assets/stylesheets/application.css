@@ -2,32 +2,35 @@
  *= require_tree .
  *= require_self
  */
+
 body {
-  color: #330000;
+  color: #978d86;
+  background-color: #f6e5d7;
   margin: 0;
   padding: 5;
 }
 
 /* --submitbutton-- */
 .submit_button {
-  color: #ff0066;
-  background-color: rgba(51, 0, 0, 0.7);
+  color: #ffc530;
+  background-color: #978d86;
   text-align: center;
   display: block; 
   font-weight: 500;
   font-size: 100%;
   padding: 5px 30px;
-  margin: 5px 0px;
-  border-radius: 10px;
-  border: none;
+  margin: 5px 2px;
+  border: 2px dashed #ffc530;
+  border-radius: .4em 2em .5em 3em/3em .5em 2em .5em;
 }
 .submit_button:hover {
-  color: #330000;
-  background-color: rgba(256, 256, 256, 0.5); 
+  color: #ffffff;
+ /* background-color: rgba(256, 256, 256, 0.5); */
+  border-color: #ffffff;
 }
 .submit_button2 {
-  color: #ff0066;
-  background-color: rgb(51, 0, 0);
+  color: #ffffff;
+  background-color: #ed8d49;
   text-align: center;
   display: block; 
   font-weight: 500;
@@ -38,35 +41,35 @@ body {
   border: none;
 }
 .submit_button2:hover {
-  color: #330000;
-  background-color: rgba(256, 0, 103, 0.8); 
+  color: #ffffff;
+  background-color: #ffc530; 
 }
 /* ---------------- */
 /* ----- link ----- */
 a {
-  color: #330000;
+  color: #ffffff;
   padding-left: 10px;
   text-decoration: none;
 }
 a:hover {
-  color: rgba(256, 256, 256, 0.8);
+  color: #73d0c2;
   text-decoration: underline;
 }
 #book_add {
-  color: #ff0066;
-  background-color: rgba(51, 0, 0, 0.7);
+  color: #ffffff;
+  background-color: #978d86;
   text-align: center;
   display: block; 
   font-weight: 500;
   font-size: 100%;
-  padding: 20px 35px;
-  margin-left: 10px; 
-  border-radius: 10px;
-  border: none;
+  padding: 10px 30px;
+  margin: 5px 2px;
+  border: 2px dashed #fff;
+  border-radius: .4em 2em .5em 3em/3em .5em 2em .5em;
 }
 #book_add:hover {
-  color: #330000;
-  background-color: rgba(256, 256, 256, 0.5); 
+  color: #ffc530;
+  border-color: #ffc530;
 }
 /* ---------------- */
 /* table member_form */
@@ -94,6 +97,9 @@ a:hover {
   text-align: left;
 }
 /* ---------------- */
+.book_show {
+  width: 1000px;
+}
 .book_show td{
   padding: 5px;
 }
@@ -111,11 +117,16 @@ h3{
   width: 400px;
 }
 h3:first-letter {
-  color: #ff0066;
+  color: #ed8d49;
 }
 /* ---------------- */
 p.book_show {
   margin: 10px 20px;
 }
+
+#search_form {
+  padding: 5px;
+}
+
 
 

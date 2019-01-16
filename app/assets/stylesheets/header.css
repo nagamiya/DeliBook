@@ -1,7 +1,7 @@
 /* ----header---- */
 div#header {
-  color: #330000;
-  background-color: #996633;
+  color: #ffffff;
+  background-color:#73d0c2;
   height: 50px;
   padding: 1%;	
 }
@@ -9,7 +9,8 @@ h1{
   margin: 0px;
 }
 h1:first-letter {
-  color: #ff0066;
+  color: #ed8d49;
+  /*color: #ed8d49;*/
   font-size: 125%;
 }
 /* -------------- */

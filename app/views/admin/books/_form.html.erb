@@ -10,9 +10,12 @@
   </tr>
   <tr>    
     <th>Authors</th>
+    <td id = "booktd">
     <%= form.collection_check_boxes(:author_ids, Author.all, :id, :name) do |f| %>
-	<td><%= f.label { f.check_box + f.text } %></td>
+	<% puts f.text + "aaaa" %>
+	<%= f.label { f.check_box + f.text  } %>
      <% end %>
+     </td>
   </tr>
   <tr>
     <th>Publisher</th>

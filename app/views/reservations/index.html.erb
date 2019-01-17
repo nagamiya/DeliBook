@@ -5,7 +5,7 @@
   <% count = 0 %>
   <% @reservations.each do |rs| %>
   <% count = count + 1 %>
-    <table>
+    <table class = "indextable">
     <tr>
       <th>No.</th>
       <th>タイトル</th>
@@ -15,11 +15,11 @@
     </tr>
     <tr>
       <td><%= count %></td>
-      <td><%= link_to rs.book.name, book_path(rs.book), class: "a2"  %></td>
+      <td><%= link_to rs.book.name, book_path(rs.book), class: "a3"  %></td>
       <td><%= rs.book_id %></td>
       <td><%= defzaiko(rs.book) %></td>
       <td><%= link_to "とりけし", member_reservation_path(current_member,rs), method: :delete,
-	data: { confirm: "予約を取り消しても良いですか？"}, class: "a2"  %></td>
+	data: { confirm: "予約を取り消しても良いですか？"}, class: "a3"  %></td>
     </tr>
     </table>
     <%= will_paginate @reservations %>

@@ -7,9 +7,45 @@ a.a2 {
 a.a2:hover {
   color: #978d86;
 } 
-
+a.a3 {
+  color: #ed8d49; 
+  padding-left: 0px;
+}
 #booktd {
   color: #978d86;
-
 }
-
+.book_show {
+  color: #978d86;
+}
+.apptable {
+  padding-left: 20px;
+}
+.list {
+  margin-top: 20px;
+  text-align: center;
+}
+.list th{
+  padding: 3px 10px;
+  border-width: 2px 0px;
+  border-style: dashed;
+  border-color: #73d0c2;
+}
+.list td {
+  border-width: 0px 0px 2px 0px;
+  border-style: dashed;
+  border-color: #73d0c2;
+  padding: 0px 5px;
+}
+.indextable{
+  margin-top: 20px;
+  text-align: center;
+}
+.indextable th{
+  padding: 5px 20px;
+}
+.indextable td {
+  padding: 0px 5px;
+}
+.p3 {
+  color: #ed8d49;
+}

@@ -2,12 +2,12 @@
 #login_form {
   background-color: #73d0c2;
   padding: 10px 25px;
-  margin: 10px;
+  margin: 10px 40px;
   
 }
 #login {
   padding-left: 10px;
-  margin: 10px 0px;
+  margin: 50px 45px 5px 45px;
 }
 .login_button {
   color: #ffffff;
@@ -16,7 +16,7 @@
   display: block; 
   font-weight: 500;
   font-size: 100%;
-  padding: 5px 20px;
+  padding: 5px 25px;
   margin: 5px 2px;
   border: 2px dashed #fff;
   border-radius: .4em 2em .5em 3em/3em .5em 2em .5em;

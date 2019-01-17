@@ -15,7 +15,7 @@
 <% end %>
 
 <% if @rentals.present? %>
-  <table>
+  <table class = "indextable">
     <tr>
       <th>貸出ID</th>
       <th>タイトル</th>
@@ -28,7 +28,7 @@
     <% @rentals.each do |rental| %>
       <tr>
         <td>[ <%= rental.id %> ]</td>
-        <td><%= link_to rental.book.name, admin_book_path(rental.book), class: "a2" %></td>
+        <td><%= link_to rental.book.name, admin_book_path(rental.book), class: "a3" %></td>
         <td><%= rental.book_id %></td>
         <td><%= defzaiko(rental.book) %></td>
         <td><%= rental.member_id %></td>

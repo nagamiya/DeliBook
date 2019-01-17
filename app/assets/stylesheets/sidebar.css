@@ -3,10 +3,10 @@ div#sidebar {
   color: #ffffff;
   background-color: #978d86;
   float: right;
-  height: 500px; width: 185px;
+  height: 500px; width: 240px;
 }
 #membername {
-  padding-left: 10px;
+  padding-left: 25px;
 }
 #newmember {
   color: #ffffff;
@@ -18,7 +18,7 @@ div#sidebar {
   border-radius: 10px;
   border: none;
   padding: 2px 0px;
-  margin: 0px 10px;
+  margin: 0px 36px;
   font-size: 100%;
 }
 #newmember:hover {

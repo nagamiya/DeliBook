@@ -5,7 +5,7 @@
   <% count = 0 %>
   <% @rentals.each do |rental| %>
   <% count = count + 1 %>
-    <table>
+    <table class = "indextable">
     <tr>
       <th>No.</th>
       <th>タイトル</th>
@@ -15,7 +15,7 @@
     </tr>
     <tr>
       <td><%= count %></td>
-      <td><%= link_to rental.book.name, book_path(rental.book), class: "a2"  %></td>
+      <td><%= link_to rental.book.name, book_path(rental.book), class: "a3"  %></td>
       <td><%= rental.book_id %></td>
       <td><%= defzaiko(rental.book) %></td>
       <% if rental.is_delivered %>

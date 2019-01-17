@@ -9,3 +9,22 @@ div#search {
   padding: 10px 35px;
   margin-left: 10px; 
 }
+#book_add {
+  color: #ffc530;
+  background-color: #978d86;
+  text-align: center;
+  display: block; 
+  font-weight: 500;
+  font-size: 100%;
+  padding: 10px 30px;
+  margin: 5px 2px;
+  border: 2px dashed #ffc530;
+  border-radius: .4em 2em .5em 3em/3em .5em 2em .5em;
+}
+#book_add:hover {
+  color: #ed8d49;
+  border-color: #ed8d49;
+}
+#search_form {
+  padding-top: 10px;
+}

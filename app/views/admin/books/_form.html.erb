@@ -12,7 +12,6 @@
     <th>Authors</th>
     <td id = "booktd">
     <%= form.collection_check_boxes(:author_ids, Author.all, :id, :name) do |f| %>
-	<% puts f.text + "aaaa" %>
 	<%= f.label { f.check_box + f.text  } %>
      <% end %>
      </td>
@@ -27,7 +26,7 @@
   </tr>
   <tr>
     <th><%= form.label :summary %></th>
-    <td><%= form.text_area :summary %></td>
+    <td><%= form.text_area :summary, style: "font-size:0.8em;" %></td>
   </tr>
   <tr>
     <th><%= form.label :stock_num %></th>

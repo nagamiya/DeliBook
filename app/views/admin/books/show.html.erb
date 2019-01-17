@@ -35,13 +35,14 @@
 <p class = "book_show">貸出数：<%= @rental_num %>｜予約数：<%= @reservation_num %>｜
   在庫数：<%= @zaiko %>｜所蔵数：<%= @book.stock_num %></p>
 
+</br>
 <%= link_to "検索結果一覧に戻る", search_admin_books_path, class: "a2"  %>
 <%= link_to "編集", edit_admin_book_path, class: "a2" %>
   <%= link_to "削除", admin_book_path, method: :delete, data: { confirm: "本の取扱いをやめますか？"}, class: "a2" %>
 
 <% if @zaiko > 0 %>
   <%= form_tag :admin_rentals, method: :post do %>
-    <table>
+    <table class = "apptable">
     <tr>
       <th>会員ID<%= text_field_tag "member", params[:member] %></th>
          <%= hidden_field_tag "book", @book.id %>
@@ -51,7 +52,7 @@
   <% end %>
 <% else %>
   <%= form_tag :admin_reservations, method: :post do %>
-    <table>
+    <table class = "apptable">
     <tr>
       <th>会員ID<%= text_field_tag "member", params[:member] %>
          <%= hidden_field_tag "book", @book.id %>

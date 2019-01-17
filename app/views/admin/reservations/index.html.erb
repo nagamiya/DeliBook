@@ -15,7 +15,7 @@
 <% end %>
 
 <% if @reservations.present? %>
-  <table>
+  <table class = "indextable">
     <tr>
       <th>予約ID</th>
       <th>タイトル</th>
@@ -27,12 +27,12 @@
     <% @reservations.each do |reservation| %>
       <tr>
         <td><%= reservation.id %></td>
-        <td><%= link_to reservation.book.name, admin_book_path(reservation.book), class: "a2" %></td>
+        <td><%= link_to reservation.book.name, admin_book_path(reservation.book), class: "a3" %></td>
         <td><%= reservation.book_id %></td>
         <td><%= defzaiko(reservation.book) %></td>
         <td><%= reservation.member_id %></td>
         <td><%= link_to "取消", admin_reservation_path(reservation.id,reservation), method: :delete,
-  	  data: { confirm: "本当に予約を取り消しても良いですか？"}, class: "a2" %>
+  	  data: { confirm: "本当に予約を取り消しても良いですか？"}, class: "a3" %>
             <% if defzaiko(reservation.book) > 0 %>
 	      ：<%= link_to "貸出申請に進む", 
 	       create_fromreservation_admin_rentals_path(id: reservation, book: reservation.book_id, member: reservation.member_id),

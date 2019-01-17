@@ -1,0 +1,303 @@
+div.content {
+  margin: 10px 50px;
+}
+a.a2 {
+  color: #ed8d49; 
+}
+a.a2:hover {
+  color: #978d86;
+} 
+a.a3 {
+  color: #ed8d49; 
+  padding-left: 0px;
+}
+#booktd {
+  color: #978d86;
+}
+.book_show {
+  color: #978d86;
+}
+.apptable {
+  padding-left: 20px;
+}
+.list {
+  margin-top: 20px;
+  text-align: center;
+}
+.list th{
+  padding: 3px 10px;
+  border-width: 2px 0px;
+  border-style: dashed;
+  border-color: #73d0c2;
+}
+.list td {
+  border-width: 0px 0px 2px 0px;
+  border-style: dashed;
+  border-color: #73d0c2;
+  padding: 0px 5px;
+}
+.indextable{
+  margin-top: 20px;
+  text-align: center;
+}
+.indextable th{
+  padding: 5px 20px;
+}
+.indextable td {
+  padding: 0px 5px;
+}
+.p3 {
+  color: #ed8d49;
+}
+/* ----footer---- */
+
+div#footer {  
+  bottom: 0px;
+}
+/* -------------- */
+/* ----header---- */
+
+div#header {
+  color: #ffffff;
+  background-color:#73d0c2;
+  height: 50px;
+  padding: 1%;	
+}
+h1{
+  margin: 0px;
+}
+h1:first-letter {
+  color: #ed8d49;
+  /*color: #ed8d49;*/
+  font-size: 125%;
+}
+/* -------------- */
+/* ----login----- */
+
+#login_form {
+  background-color: #73d0c2;
+  padding: 10px 25px;
+  margin: 10px 40px;
+  
+}
+#login {
+  padding-left: 10px;
+  margin: 50px 45px 5px 45px;
+}
+.login_button {
+  color: #ffffff;
+  background-color: #73d0c2; 
+  text-align: center;
+  display: block; 
+  font-weight: 500;
+  font-size: 100%;
+  padding: 5px 25px;
+  margin: 5px 2px;
+  border: 2px dashed #fff;
+  border-radius: .4em 2em .5em 3em/3em .5em 2em .5em;
+}
+
+.login_button:hover {
+  color: #978d86;
+  border-color: #978d86;
+}
+@charset "UTF-8";
+/* ページネーション */
+/* line 3, /home/ne290149/rails/delibook/app/assets/stylesheets/pagination.css.scss */
+div.pagination {
+  font-size: 75%;
+  padding: 4px 8px;
+  margin: 10px 0px;
+  width: 800px;
+  word-spacing: 8px;
+}
+/* line 10, /home/ne290149/rails/delibook/app/assets/stylesheets/pagination.css.scss */
+div.pagination em {
+  font-style: normal;
+}
+/* line 11, /home/ne290149/rails/delibook/app/assets/stylesheets/pagination.css.scss */
+div.pagination em.current {
+  color: #ed8d49;
+  font-weight: bold;
+}
+
+/* line 16, /home/ne290149/rails/delibook/app/assets/stylesheets/pagination.css.scss */
+.next_page {
+  color: #978d86;
+}
+/* ----search---- */
+
+div#search {
+  color: #f6e5d7;
+  background-color: #978d86;
+  height: 90px;
+  padding: 0px 50px;
+}
+#search_button {
+  padding: 10px 35px;
+  margin-left: 10px; 
+}
+#book_add {
+  color: #ffc530;
+  background-color: #978d86;
+  text-align: center;
+  display: block; 
+  font-weight: 500;
+  font-size: 100%;
+  padding: 10px 30px;
+  margin: 5px 2px;
+  border: 2px dashed #ffc530;
+  border-radius: .4em 2em .5em 3em/3em .5em 2em .5em;
+}
+#book_add:hover {
+  color: #ed8d49;
+  border-color: #ed8d49;
+}
+#search_form {
+  padding-top: 10px;
+}
+/* ---sidebar--- */
+
+div#sidebar {
+  color: #ffffff;
+  background-color: #978d86;
+  float: right;
+  height: 500px; width: 240px;
+}
+#membername {
+  color: #f6e5d7;
+  padding-left: 25px;
+}
+#newmember {
+  color: #ffffff;
+  background-color: #ed8d49;
+  width: 165px;
+  text-align: center;
+  display: block; 
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+  padding: 2px 0px;
+  margin: 0px 36px;
+  font-size: 100%;
+}
+#newmember:hover {
+  color: #ed8d49;
+  background-color: rgba(256, 256, 256, 0.5); 
+}
+/* -------------- */
+/*
+
+
+ */
+
+
+body {
+  color: #978d86;
+  background-color: #f6e5d7;
+  margin: 0;
+  padding: 5;
+}
+
+/* --submitbutton-- */
+.submit_button {
+  color: #ffc530;
+  background-color: #978d86;
+  text-align: center;
+  display: block; 
+  font-weight: 500;
+  font-size: 100%;
+  padding: 5px 30px;
+  margin: 5px 2px;
+  border: 2px dashed #ffc530;
+  border-radius: .4em 2em .5em 3em/3em .5em 2em .5em;
+}
+.submit_button:hover {
+  color: #ed8d49;
+  border-color: #ed8d49;
+}
+.submit_button2 {
+  color: #ffffff;
+  background-color: #ed8d49;
+  text-align: center;
+  display: block; 
+  font-weight: 500;
+  font-size: 100%;
+  padding: 5px 30px;
+  margin: 5px 0px;
+  border-radius: 10px;
+  border: none;
+}
+.submit_button2:hover {
+  color: #ffffff;
+  background-color: #ffc530; 
+}
+/* ---------------- */
+/* ----- link ----- */
+a {
+  color: #978d86;
+  padding-left: 45px;
+  text-decoration: none;
+}
+a:hover {
+  color: #73d0c2;
+  text-decoration: underline;
+}
+.a4 {
+  color: #f6e5d7;
+}
+/* ---------------- */
+/* table member_form */
+.member_form {
+  margin 10px;
+}
+.member_form td{
+  padding: 3px 10px;
+}
+.member_form th {
+  text-align: left;
+}
+.admin_chck {
+  padding: 10px;
+}
+/* ---------------- */
+/* table member_body */
+.members_body {
+  margin 10px;
+}
+.members_body td{
+  padding: 3px 10px;
+}
+.members_body th {
+  text-align: left;
+}
+/* ---------------- */
+.book_show {
+  
+  font-weight: 
+}
+.book_show td{
+  padding: 5px;
+}
+.book_show th {
+  text-align: left;
+  padding-top: 3px;
+  padding-left: 20px;
+}
+
+
+h3{
+  margin: 0px;
+  width: 400px;
+}
+h3:first-letter {
+  color: #ed8d49;
+}
+/* ---------------- */
+p.book_show {
+  margin: 10px 20px;
+}
+
+
+
+

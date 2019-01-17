@@ -46,7 +46,7 @@ body {
 /* ---------------- */
 /* ----- link ----- */
 a {
-  color: #ffffff;
+  color: #978d86;
   padding-left: 45px;
   text-decoration: none;
 }
@@ -54,7 +54,9 @@ a:hover {
   color: #73d0c2;
   text-decoration: underline;
 }
-
+.a4 {
+  color: #f6e5d7;
+}
 /* ---------------- */
 /* table member_form */
 .member_form {

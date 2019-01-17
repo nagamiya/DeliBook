@@ -8,8 +8,10 @@ div.pagination {
 
   em { font-style: normal; }
   em.current {
-    color: #ff0066;
+    color: #ed8d49;
     font-weight: bold;
   }
 }
-
+.next_page {
+  color: #978d86;
+}

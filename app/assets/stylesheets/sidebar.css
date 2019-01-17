@@ -6,6 +6,7 @@ div#sidebar {
   height: 500px; width: 240px;
 }
 #membername {
+  color: #f6e5d7;
   padding-left: 25px;
 }
 #newmember {

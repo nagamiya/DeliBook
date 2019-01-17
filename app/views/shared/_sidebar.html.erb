@@ -2,30 +2,30 @@
 <% if current_member %>
 	<%if current_member.is_admin? %>
 　　　　　  <p id = "membername"><%= current_member.name + "さん" %></br>[管理者]</p>
-	  <%= link_to "▶ プロフィール", account_path(id: current_member.id) %></br>
-	  <%= link_to "▶ 会員一覧", admin_members_path %></br>
-	  <%= link_to "▶ 貸出中一覧", admin_rentals_path %></br>
-	  <%= link_to "▶ 予約中一覧", admin_reservations_path %></br>
-	  <%= link_to "▶ 貸出申請一覧", app_index_admin_rentals_path %></br>
-          <%= link_to "▶ 貸出履歴", history_index_admin_rentals_path %></br>
+	  <%= link_to "▶ プロフィール", account_path(id: current_member.id) , class: "a4"%></br>
+	  <%= link_to "▶ 会員一覧", admin_members_path , class: "a4" %></br>
+	  <%= link_to "▶ 貸出中一覧", admin_rentals_path, class: "a4" %></br>
+	  <%= link_to "▶ 予約中一覧", admin_reservations_path, class: "a4" %></br>
+	  <%= link_to "▶ 貸出申請一覧", app_index_admin_rentals_path, class: "a4" %></br>
+          <%= link_to "▶ 貸出履歴", history_index_admin_rentals_path, class: "a4" %></br>
 	<% else %>
 　　　　　  <p id = "membername"><%= current_member.name + "さん" %></br></p>
-	  <%= link_to "▶ プロフィール", account_path(id: current_member.id) %></br>
-	  <%= link_to "▶ 貸出中一覧", member_rentals_path(member_id: current_member.id) %></br>
-	  <%= link_to "▶ 予約中一覧", member_reservations_path(member_id: current_member.id) %></br>
-          <%= link_to "▶ 貸出履歴" , history_index_member_rentals_path(member_id: current_member.id)%></br>
+	  <%= link_to "▶ プロフィール", account_path(id: current_member.id), class: "a4" %></br>
+	  <%= link_to "▶ 貸出中一覧", member_rentals_path(member_id: current_member.id), class: "a4" %></br>
+	  <%= link_to "▶ 予約中一覧", member_reservations_path(member_id: current_member.id), class: "a4" %></br>
+          <%= link_to "▶ 貸出履歴" , history_index_member_rentals_path(member_id: current_member.id), class: "a4"%></br>
 	<% end %>
         </br>	
 	<%= link_to "▷ ログアウト", :session,
-      method: :delete, data: { confirm: "ログアウトしますか？" } %></br>
+      method: :delete, data: { confirm: "ログアウトしますか？" }, class: "a4" %></br>
 <% else %>
 	<%= link_to "新規登録", [:new, :member] , id: "newmember"%></br>
        <%= link_to "▷ Topに戻る", root_path %>	
 <% end %>
 <% if current_member %>
   <% if current_member.is_admin? %>
-    <%= link_to "▷ Topに戻る", admin_root_path %>
+    <%= link_to "▷ Topに戻る", admin_root_path, class: "a4" %>
   <% else %>
-    <%= link_to "▷ Topに戻る", root_path %>
+    <%= link_to "▷ Topに戻る", root_path, class: "a4" %>
   <% end %>
 <% end %>

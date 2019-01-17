@@ -9,9 +9,9 @@ class Book < ActiveRecord::Base
 	validates :isbn, presence: true,
 	  length: { is: 13 },
 	  uniqueness: true
-	validates :book_authors, 
-	length: { minimum: 1,
-		    message: "を１つ以上選択してください" }
+	#validates :book_authors, 
+	#length: { minimum: 1,
+#		    message: "を１つ以上選択してください" }
 	validates :publisher_id, presence: true
 	validates :genre_id, presence: true
 	validates :stock_num, presence: true,

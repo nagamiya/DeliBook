@@ -1,4 +1,4 @@
-w<%= render "shared/login_form" unless current_member %>
+<%= render "shared/login_form" unless current_member %>
 <% if current_member %>
 	<%if current_member.is_admin? %>
 　　　　　  <p id = "membername"><%= current_member.name + "さん" %></br>[管理者]</p>

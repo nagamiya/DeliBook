@@ -20,12 +20,12 @@
       method: :delete, data: { confirm: "ログアウトしますか？" }, class: "a4" %></br>
 <% else %>
 	<%= link_to "新規登録", [:new, :member] , id: "newmember"%></br>
-       <%= link_to "▷ Topに戻る", root_path %>	
+       <%= link_to "▷ Topに戻る", root_path, class: "a4"%>	
 <% end %>
 <% if current_member %>
   <% if current_member.is_admin? %>
-    <%= link_to "▷ Topに戻る", admin_root_path, id: "top_a" %>
+    <%= link_to "▷ Topに戻る", admin_root_path, class: "a4" %>
   <% else %>
-    <%= link_to "▷ Topに戻る", root_path, id: "top_a" %>
+    <%= link_to "▷ Topに戻る", root_path, class: "a4" %>
   <% end %>
 <% end %>

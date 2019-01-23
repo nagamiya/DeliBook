@@ -20,7 +20,6 @@ class Admin::BooksController < Admin::Base
 
 	def create
    	  @book = Book.new(book_params)
-   
    	  puts "!!!!!!!!!!!!!admin/books/create"
    	  if @book.save
 	    flash[:notice] = "本の登録が完了しました"

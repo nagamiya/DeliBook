@@ -26,4 +26,10 @@ div#sidebar {
   color: #ed8d49;
   background-color: rgba(256, 256, 256, 0.5); 
 }
+#top_a {
+  color: #f6e5d7;
+}
+#top_a:hover {
+  color: #73d0c2;
+}
 /* -------------- */

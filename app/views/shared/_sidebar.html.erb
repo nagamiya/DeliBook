@@ -1,4 +1,4 @@
-<%= render "shared/login_form" unless current_member %>
+w<%= render "shared/login_form" unless current_member %>
 <% if current_member %>
 	<%if current_member.is_admin? %>
 　　　　　  <p id = "membername"><%= current_member.name + "さん" %></br>[管理者]</p>
@@ -24,8 +24,8 @@
 <% end %>
 <% if current_member %>
   <% if current_member.is_admin? %>
-    <%= link_to "▷ Topに戻る", admin_root_path, class: "a4" %>
+    <%= link_to "▷ Topに戻る", admin_root_path, id: "top_a" %>
   <% else %>
-    <%= link_to "▷ Topに戻る", root_path, class: "a4" %>
+    <%= link_to "▷ Topに戻る", root_path, id: "top_a" %>
   <% end %>
 <% end %>

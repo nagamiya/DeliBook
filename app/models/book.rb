@@ -20,7 +20,6 @@ class Book < ActiveRecord::Base
 
 	class << self
 	  def search(query)
-	     rel = order("id")
 	     if query.present?
 		rel = Book.joins(:authors, :publisher, :genre)
 		rel = rel.where("Books.name LIKE ? " , "%#{query[0]}%")
@@ -28,6 +27,7 @@ class Book < ActiveRecord::Base
 		rel = rel.where("Publishers.name LIKE ? " , "%#{query[2]}%")
 		rel = rel.where("Genres.name LIKE ? ", "%#{query[3]}%")
 		rel = rel.distinct
+	        rel = order("id")
 	     end
 	    rel 
 	  end

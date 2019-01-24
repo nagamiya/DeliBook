@@ -19,7 +19,7 @@ class BooksController < ApplicationController
 	  @book_info = [@book_title, @book_author, @book_publisher, @book_genre]
 	  #puts @book_info
 
-	  @books = Book.search(@book_info).paginate(page: params[:page], per_page: 5)
+	  @books = Book.search(@book_info).order(:id).paginate(page: params[:page], per_page: 5)
 	  render "index"
 	end
 
